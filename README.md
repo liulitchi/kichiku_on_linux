@@ -1,2 +1,1 @@
-# kichiku_on_linux
-elegant kichiku on linux
+如何在 linux 系统下制作鬼畜视频
