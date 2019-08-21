@@ -2,11 +2,11 @@
 
 > 我的电脑无线型号 ： RTL8188ce ,接口为 PCI ，FreeBSD 驱动： rtwn
 
-#### 1.修改 vi /boot/loader.conf ,加入以下代码：
+### 1.修改 vi /boot/loader.conf ,加入以下代码：
 
 ```
-legal.realtek.license_ack=1    # 
-firmware_load="YES"    # 
+legal.realtek.license_ack=1    
+firmware_load="YES"    
 if_rtwn_pci_load="YES"    # USB 接口可改为 if_rtwn_usb_load="YES",位于 /boot/kernel/if_rtwn_pci.ko
  
 wlan_scan_ap_load="YES"
