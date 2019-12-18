@@ -96,21 +96,27 @@ hald_enable="YES"
     
 ### 无线模块
     
-查看无线硬件型号：pciconf -lv
+查看无线硬件型号： > pciconf -lv
     
 我的笔记本显示出无线型号为 RTL8188CU，查阅手册发现，开启 rtwn 模块即可开启无线，步骤如下（其它无线模块大同小异）：
     
-打开 /boot/loader.conf ,添加以下内容：
-    
+打开 `/boot/loader.conf` ,添加以下内容：
+
+```   
 if_rtwn_load="YES"
+
 if_rtwn_pci_load="YES"
+
 legal.realtek.license_ack=1
+```
     
-打开 /etc/rc.conf，添加以下内容
-    
+打开 `/etc/rc.conf`，添加以下内容
+
+```   
 wlans_rtwn0="wlan0"
+
 ifconfig_wlan="WPA DHCP"
-    
+```    
     
     
     
