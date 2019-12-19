@@ -125,7 +125,7 @@ ifconfig_wlan="WPA DHCP"
 
 说实话，这一段是懵的，我也不知道做了哪些，就手动挂载了。
 
-对于一个 fat32 格式的u盘。
+#### fat32 格式的u盘。
 
 运行 dmesg ，确定它的盘符。或者
 
@@ -136,6 +136,23 @@ ls /dev/da* ,会出现以下内容：
 则确定了 `da1` 是我要挂载的U盘，运行
 
 `mount_msdosfs /dev/da1 /media/da1`即可挂载。
+
+#### ext4 格式的U盘
+
+安装识别 ext 格式的软件： pkg install fusefs-ext4fuse
+
+确定u盘的盘符是 da1s1 后， 运行ext4fuse /dev/da1s1 /media/da1s1
+
+然而结果是可以显示盘符，但是无法看到U盘内容。
+
+于是， 灵光一闪：
+caja /media/da1s1
+
+居然显示了
+
+
+
+
 
 
     
