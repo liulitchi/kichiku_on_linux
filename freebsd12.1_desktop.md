@@ -91,7 +91,10 @@ hald_enable="YES"
 根据安装后的提示，执行 vim .xinitrc，添加以下内容
     
 ```
-  （待记）
+export XMODIFIERS='@im=fcitx'
+export GTK_IM_MODULE=fcitx
+export GTK3_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
 ```
     
 ### 无线模块
