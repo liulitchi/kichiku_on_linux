@@ -119,7 +119,25 @@ legal.realtek.license_ack=1
 wlans_rtwn0="wlan0"
 
 ifconfig_wlan="WPA DHCP"
-```    
+```
+
+### 挂载U盘
+
+说实话，这一段是懵的，我也不知道做了哪些，就手动挂载了。
+
+对于一个 fat32 格式的u盘。
+
+运行 dmesg ，确定它的盘符。或者
+
+ls /dev/da* ,会出现以下内容：
+
+`/dev/da0    /dev/da0s1  /dev/da0s1a /dev/da0s1b /dev/da1`
+
+则确定了 `da1` 是我要挂载的U盘，运行
+
+`mount_msdosfs /dev/da1 /media/da1`即可挂载。
+
+
     
     
     
