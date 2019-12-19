@@ -150,6 +150,8 @@ caja /media/da1s1
 
 居然显示了
 
+同理， Sata 硬盘的格式为 ada*
+
 
 
 
