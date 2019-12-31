@@ -58,16 +58,17 @@ dbus_enable="YES"
 hald_enable="YES"
 ````
     
-安装显示管理器：
+安装显示管理器（登录管理器）：
     
-> pkg install slim 
+> pkg install slim
     
-配置登录管理器:
+启用登录管理器:
     
-> vim /etc/rc.conf
-    
-添加一行 `slim_enable="YES"`
-    
+> vim /etc/rc.conf 里添加一行 `slim_enable="YES"`
+
+默认用户自动登录：
+
+> vim /usr/local/etc/slim.conf ，找到 auto_login,取消注释， 这一行变为`auto_login yes`。同时找到 default_user , 这一行变为`default_user   你的用户名`  。保存后退出。
     
 退出系统，使用普通账号登录系统。
     
