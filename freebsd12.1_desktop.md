@@ -87,7 +87,9 @@ hald_enable="YES"
     
 添加中文字体： pkg install noto-sc
     
-安装网络管理器： pkg install networkmgr 
+安装网络管理器： pkg install networkmgr
+
+安装软件包管理器：octopkg
     
 安装中文输入法： pkg install zh-fcitx zh-fcitx-sunpinyin
     
@@ -123,7 +125,9 @@ wlans_rtwn0="wlan0"
 
 ifconfig_wlan="WPA DHCP"
 ```
+### 修改 sh
 
+chsh 用户名，然后编辑文件即可, 如  sh 一栏改为 /usr/local/bin/bash
 ### 挂载U盘
 
 说实话，这一段是懵的，我也不知道做了哪些，就手动挂载了。
