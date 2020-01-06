@@ -22,7 +22,9 @@ FreeBSD: {
   url: "pkg+http://mirrors.ustc.edu.cn/freebsd-pkg/${ABI}/quarterly",
  }
 ```
-    
+修改operation timed out：
+打开 /usr/local/etc/pkg.conf,  查找 fetch_entry 一行，取消注释，并改为 fetch_entry = 10 ;同理 fetch_timeout = 200(或者为 fetch_time)
+
 保存文本后，就可以开始更新源了
     
 > pkg update
@@ -53,7 +55,7 @@ vi打开sudo:
 > vim /etc/rc.conf
 添加以下内容：
 ```
-    moused_enable="YES"
+moused_enable="YES"
 dbus_enable="YES"
 hald_enable="YES"
 ````
@@ -140,7 +142,7 @@ ls /dev/da* ,会出现以下内容：
 
 #### ext4 格式的U盘
 
-安装识别 ext 格式的软件： pkg install fusefs-ext4fuse
+安装识别 ext 格式的软件： pkg install fusefs-ext2
 
 确定u盘的盘符是 da1s1 后， 运行ext4fuse /dev/da1s1 /media/da1s1
 
