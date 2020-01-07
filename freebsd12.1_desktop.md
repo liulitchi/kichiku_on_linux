@@ -123,7 +123,7 @@ legal.realtek.license_ack=1
 ```   
 wlans_rtwn0="wlan0"
 
-ifconfig_wlan="WPA DHCP"
+ifconfig_wlan0="WPA DHCP"
 ```
 ### 修改 sh
 
