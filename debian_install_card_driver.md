@@ -8,7 +8,7 @@
 
 - 删除（可能）已有的英伟达驱动，注意点号：`apt purge nvidia.`。
 
-- 打开文档 `/etc/apt/sources.list`，添加一行：
+- 打开文档 `/etc/apt/sources.list`，添加 contrib 和 non-free 源，如：
 
   >  deb http://mirrors.ustc.edu.cn/debian buster main contrib non-free
   
