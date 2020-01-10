@@ -1,6 +1,6 @@
 ## AMD (未经测试)
 
-### 公有驱动 
+### 公有驱动 [参考文档](https://wiki.debian.org/AtiHowTo)
 
 ### 私有驱动 [参考文档](https://wiki.debian.org/AMDGPUDriverOnStretchAndBuster2)
 
