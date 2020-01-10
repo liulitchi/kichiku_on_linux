@@ -48,7 +48,11 @@
 开箱即用，无需安装。可以查看一下软件包 `xserver-xorg-core`，应该已默认安装。
 
 
-## Nvidia [参考文档](https://wiki.debian.org/NvidiaGraphicsDrivers#Installation)
+## Nvidia 
+
+
+
+### 公有驱动[参考文档](https://wiki.debian.org/NvidiaGraphicsDrivers#Installation)
 
 - 前面几步和安装amd驱动类似，增加闭源源文件，安装内核头文件。
 
