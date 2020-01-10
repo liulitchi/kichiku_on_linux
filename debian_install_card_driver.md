@@ -54,7 +54,7 @@
 
 ### 公有驱动[参考文档](https://wiki.debian.org/NvidiaGraphicsDrivers#Installation)
 
-- 前面几步和安装amd驱动类似，增加闭源源文件，安装内核头文件。
+- 前面几步和安装amd驱动类似，增加闭源源文件，更新源文件，安装内核头文件。
 
 - 安装驱动：
 
