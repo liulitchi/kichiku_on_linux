@@ -6,7 +6,7 @@
 
  
 
-- 删除系统（可能）已有的英伟达驱动，注意点号：`apt-get purge nvidia.`。
+- 删除（可能）已有的英伟达驱动，注意点号：`apt purge nvidia.`。
 
 - 打开文档 `/etc/apt/sources.list`，添加一行：
 
@@ -18,7 +18,7 @@
  
   较新显卡： > apt install firmware-linux-nonfree libgl1-mesa-dri xserver-xorg-video-amdgpu 
  
- 
+  或者
  
   较旧显卡： > apt install firmware-linux-nonfree libgl1-mesa-dri xserver-xorg-video-ati
   
