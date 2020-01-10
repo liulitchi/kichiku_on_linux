@@ -2,6 +2,29 @@
 
 ### 公有驱动 [参考文档](https://wiki.debian.org/AtiHowTo)
 
+- 查看一下显卡型号： `lspci -nn | grep VGA`
+
+ 
+
+- 删除系统（可能）已有的英伟达驱动，注意点号：`apt-get purge nvidia.`。
+
+- 打开文档 `/etc/apt/sources.list`，添加一行：
+
+  >  deb http://mirrors.ustc.edu.cn/debian buster main contrib non-free
+  
+- 更新源文件：`sudo apt update`
+
+- 安装驱动：
+ 
+  较新显卡： > apt install firmware-linux-nonfree libgl1-mesa-dri xserver-xorg-video-amdgpu 
+ 
+ 
+ 
+  较旧显卡： > apt install firmware-linux-nonfree libgl1-mesa-dri xserver-xorg-video-ati
+  
+- 重启系统
+  
+
 ### 私有驱动 [参考文档](https://wiki.debian.org/AMDGPUDriverOnStretchAndBuster2)
 
 1. 访问[AMD官方驱动网址](https://www.amd.com/en/support/kb/release-notes/rn-amdgpu-unified-linux)，
