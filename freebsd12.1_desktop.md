@@ -160,6 +160,13 @@ caja /media/da1s1
 同理， Sata 硬盘的格式为 ada*
 
 
+## 第三部分
+
+### 使用技巧
+
+- 显示硬件： vim /var/run/dmesg.boot
+
+
 
 
 
