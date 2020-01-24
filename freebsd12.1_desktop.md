@@ -166,6 +166,8 @@ caja /media/da1s1
 
 - 显示硬件： vim /var/run/dmesg.boot
 
+- 登录信息： vim /var/log/messages
+
 
 
 
