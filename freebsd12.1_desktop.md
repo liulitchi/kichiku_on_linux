@@ -130,10 +130,12 @@ ifconfig_wlan0="WPA DHCP"
 chsh 用户名，然后编辑文件即可, 如  sh 一栏改为 /usr/local/bin/bash
 ### 挂载U盘
 
-说实话，这一段是懵的，我也不知道做了哪些，就手动挂载了。
+打开/boot/loader.conf，添加一行:
 
-#### fat32 格式的u盘。
+> kern.vty=vt
 
+#### fat32 格式的u盘
+n
 运行 dmesg ，确定它的盘符。或者
 
 ls /dev/da* ,会出现以下内容：
