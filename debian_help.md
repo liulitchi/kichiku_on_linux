@@ -22,13 +22,14 @@ debian 10 的代码名 buster ，debian 11 的代码名 bullseye 。
 
 ### debian Mate 自动登录[来源](https://ubuntu-mate.community/t/auto-login-to-the-desktop/60)
 
-  debian Mate 的登录管理器为 lightDM， 修改方式为打开`/usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf `文件，没有就新建一个。
+  debian Mate 的登录管理器为 lightDM， 修改方式为打开`/usr/share/lightdm/lightdm.conf.d/01_debian.conf`。
   
-  添加 三行：
+  修改为以下：
   
   ```
-[SeatDefaults]
-greeter-session=lightdm-gtk-greeter
+[Seat:*]
+greeter-session=lightdm-greeter
+greeter-hide-users=false
 autologin-user=你的用户名
 ```
 
