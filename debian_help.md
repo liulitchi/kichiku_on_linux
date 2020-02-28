@@ -5,6 +5,8 @@
 
 ### 修改源文件
 
+添加 contrib 以及 non-free
+
 debian 10 的代码名 buster ，debian 11 的代码名 bullseye 。
 
 > 
