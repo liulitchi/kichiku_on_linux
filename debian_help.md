@@ -16,6 +16,8 @@ debian 10 的代码名 buster ，debian 11 的代码名 bullseye 。
 
 - 数量众多的 task-%language-desktop
 
+- 没有硬件的显卡驱动： `xserver-xorg-video-ati` `xserver-xorg-video-amdgpu` `xserver-xorg-video-radeon' 等。
+
 
 
 ### debian Mate 自动登录[来源](https://ubuntu-mate.community/t/auto-login-to-the-desktop/60)
