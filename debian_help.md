@@ -45,3 +45,6 @@ autologin-user=你的用户名
   修改 `evbug.ko`文件，如改为`evbug.off`。保存后重启。
   
   
+### 多语言支持，如中英日：
+  
+ sudo dpkg-reconfigure locales ，出现选项框后添加。
