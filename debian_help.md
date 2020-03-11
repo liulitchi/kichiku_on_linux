@@ -48,3 +48,6 @@ autologin-user=你的用户名
 ### 多语言支持，如中英日：
   
  sudo dpkg-reconfigure locales ，出现选项框后添加。
+ 
+ wine32：dpkg --add-architecture i386 && apt update &&
+apt install wine32
