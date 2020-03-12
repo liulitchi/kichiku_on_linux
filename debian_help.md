@@ -49,5 +49,4 @@ autologin-user=你的用户名
   
  sudo dpkg-reconfigure locales ，出现选项框后添加。
  
- wine32：dpkg --add-architecture i386 && apt update &&
-apt install wine32
+ wine32 依赖：dpkg --add-architecture i386 && apt update && apt install wine32 # debian 11 测试失败， playonlinux 安装 utau 。
