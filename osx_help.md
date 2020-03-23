@@ -21,3 +21,17 @@
 - brew update
 
 have fun.
+
+
+## brew can't install app
+
+Error output `error: could not lock config file .git/config: Permission denied`
+
+how to do: 
+
+> sudo chgrp -R admin /usr/local
+
+> sudo chmod -R g+w /usr/local
+
+> brew update
+
