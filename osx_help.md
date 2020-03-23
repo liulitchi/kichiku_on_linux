@@ -8,7 +8,7 @@
 
 - sudo git clone https://mirrors.ustc.edu.cn/brew.git /usr/local/Homebrew
 
-- sudo ln -s /usr/local/Homebrew/bin/brew /usr/local/bin/brew # if term output 'File exists' means/usr/local/bin already have brew, then delete file brew (sudo rm /usr/local/bin/brew)
+- sudo ln -s /usr/local/Homebrew/bin/brew /usr/local/bin/brew # if term output 'File exists' meaning /usr/local/bin already have brew, then delete file brew (sudo rm /usr/local/bin/brew)
 
 - sudo mkdir -p /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core
 
@@ -19,3 +19,5 @@
 - HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
 - brew update
+
+have fun.
