@@ -35,3 +35,18 @@ how to do:
 
 > brew update
 
+## macOS test ext4
+
+install pkg
+
+> brew cask install osxfuse
+
+> brew install ext4fuse
+
+disk name
+
+> diskutil list
+
+then mount 
+
+> sudo ext4fuse /dev/disk3s1 /????
