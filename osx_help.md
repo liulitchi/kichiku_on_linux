@@ -47,6 +47,12 @@ disk name
 
 > diskutil list
 
+create a path
+
+> mkdir ~/Desktop/UDISK
+
 then mount 
 
-> sudo ext4fuse /dev/disk3s1 /????
+> sudo ext4fuse /dev/diskXsY ~/Desktop/UDISK -o allow_other
+
+
