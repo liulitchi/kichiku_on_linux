@@ -128,39 +128,10 @@ ifconfig_wlan0="WPA DHCP"
 ### 修改 sh
 
 chsh 用户名，然后编辑文件即可, 如  sh 一栏改为 /usr/local/bin/bash
+
 ### 挂载U盘
 
-打开/boot/loader.conf，添加一行:
-
-> kern.vty=vt
-
-#### fat32 格式的u盘
-n
-运行 dmesg ，确定它的盘符。或者
-
-ls /dev/da* ,会出现以下内容：
-
-`/dev/da0    /dev/da0s1  /dev/da0s1a /dev/da0s1b /dev/da1`
-
-则确定了 `da1` 是我要挂载的U盘，运行
-
-`mount_msdosfs /dev/da1 /media/da1`即可挂载。
-
-#### ext4 格式的U盘
-
-安装识别 ext 格式的软件： pkg install fusefs-ext2
-
-确定u盘的盘符是 da1s1 后， 运行ext4fuse /dev/da1s1 /media/da1s1
-
-然而结果是可以显示盘符，但是无法看到U盘内容。
-
-于是， 灵光一闪：
-caja /media/da1s1
-
-居然显示了
-
-同理， Sata 硬盘的格式为 ada*
-
+pkg install automount
 
 ## 第三部分
 
