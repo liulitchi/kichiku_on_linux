@@ -91,7 +91,7 @@ hald_enable="YES"
 
 安装软件包管理器：octopkg
     
-安装中文输入法： pkg install zh-fcitx zh-fcitx-libpinyin
+安装中文输入法： pkg install zh-fcitx zh-fcitx-libpinyin zh-fcitx-configtool
     
 根据安装后的提示，执行 vim .xinitrc，添加以下内容
     
