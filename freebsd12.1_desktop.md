@@ -91,7 +91,7 @@ hald_enable="YES"
 
 安装软件包管理器：octopkg
     
-安装中文输入法： pkg install zh-fcitx zh-fcitx-sunpinyin
+安装中文输入法： pkg install zh-fcitx zh-fcitx-libpinyin
     
 根据安装后的提示，执行 vim .xinitrc，添加以下内容
     
@@ -131,8 +131,8 @@ chsh 用户名，然后编辑文件即可, 如  sh 一栏改为 /usr/local/bin/b
 
 ### 挂载U盘
 
-pkg install automount
-
+> pkg install automount
+ 
 ## 第三部分
 
 ### 使用技巧
