@@ -60,7 +60,12 @@ moused_enable="YES"
 dbus_enable="YES"
 hald_enable="YES"
 ````
-    
+
+
+### 输入法配置
+
+安装好 fcitx 后，使用 `Configure`来配置，可以保留汉语和英语两种输入法，如 `pinyin(LibPinYin)`和`Keyboard - English(US)`。默认 Ctrl + 空格切换。
+
 安装显示管理器（登录管理器）：
     
 > pkg install slim
@@ -102,7 +107,7 @@ export GTK_IM_MODULE=fcitx
 export GTK3_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 ```
-    
+
 ### 无线模块
     
 查看无线硬件型号： > pciconf -lv
