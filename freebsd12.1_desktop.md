@@ -112,8 +112,6 @@ export QT_IM_MODULE=fcitx
 打开 `/boot/loader.conf` ,添加以下内容：
 
 ```   
-if_rtwn_load="YES"
-
 if_rtwn_pci_load="YES"
 
 legal.realtek.license_ack=1
@@ -124,8 +122,18 @@ legal.realtek.license_ack=1
 ```   
 wlans_rtwn0="wlan0"
 
-ifconfig_wlan0="WPA DHCP"
+ifconfig_wlan0="WPA DHCP" 
 ```
+
+then restart netif
+
+> sudo /etc/rc.d/netif restart
+
+may be you need 
+
+> sudo ifconfig wlan0 up
+
+
 ### 修改 sh
 
 chsh 用户名，然后编辑文件即可, 如  sh 一栏改为 /usr/local/bin/bash
