@@ -145,7 +145,7 @@ ifconfig_wlan0="WPA DHCP"
 
 chsh 用户名，然后编辑文件即可, 如  sh 一栏改为 /usr/local/bin/bash
 
-### 挂载U盘
+### 自动挂载U盘
 
 > pkg install automount
  
@@ -156,6 +156,11 @@ chsh 用户名，然后编辑文件即可, 如  sh 一栏改为 /usr/local/bin/b
 - 显示硬件： vim /var/run/dmesg.boot
 
 - 登录信息： vim /var/log/messages
+
+
+### 部分软件
+
+vscode linux-fdisk ddrescue redshift plank unrar you-get( pip 内版本较新) linux-sublime3 linuxqq
 
 
 
