@@ -26,7 +26,7 @@ FreeBSD: {
 
 <s>打开 /usr/local/etc/pkg.conf,  查找 fetch_entry 一行，取消注释，并改为 fetch_entry = 10 ;同理 fetch_timeout = 200(或者为 fetch_time)</s>
 
-<s>保存文本后，就可以开始更新源了</s>
+保存文本后，就可以开始更新源了
     
 > pkg update
     
