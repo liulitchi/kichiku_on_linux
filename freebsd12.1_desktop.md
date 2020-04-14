@@ -164,6 +164,7 @@ vscode linux-fdisk ddrescue redshift plank unrar you-get( pip 内版本较新) l
 
 ### neofetch 输出
 
+
 ```                        `       li@FreeBSD 
   ` `.....---.......--.```   -/    ---------- 
   +o   .--`         /y:`      +.   OS: FreeBSD 12.1-RELEASE amd64 
@@ -181,6 +182,7 @@ vscode linux-fdisk ddrescue redshift plank unrar you-get( pip 内版本较新) l
           .---.....----.           CPU: Intel i5-2540M (4) @ 2.594GHz 
                                    GPU: 2nd Generation Core Processor Family In 
                                    Memory: 2267MiB / 7705MiB 
+```
 
 
 
