@@ -62,9 +62,7 @@ hald_enable="YES"
 ````
 
 
-### 输入法配置
 
-安装好 fcitx 后，使用 `Configure`来配置，可以保留汉语和英语两种输入法，如 `pinyin(LibPinYin)`和`Keyboard - English(US)`。默认 Ctrl + 空格切换。
 
 安装显示管理器（登录管理器）：
     
@@ -108,6 +106,10 @@ export GTK3_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 ```
 
+输入法配置
+
+安装好 fcitx 后，使用 `Configure`来配置，可以保留汉语和英语两种输入法，如 `pinyin(LibPinYin)`和`Keyboard - English(US)`。默认 Ctrl + 空格切换。
+
 ### 无线模块
     
 查看无线硬件型号： > pciconf -lv
@@ -130,11 +132,11 @@ wlans_rtwn0="wlan0"
 ifconfig_wlan0="WPA DHCP" 
 ```
 
-then restart netif
+然后重启 netif
 
 > sudo /etc/rc.d/netif restart
 
-may be you need 
+如何仍不起作用，终端再输入
 
 > sudo ifconfig wlan0 up
 
