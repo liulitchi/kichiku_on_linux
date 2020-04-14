@@ -162,6 +162,27 @@ chsh 用户名，然后编辑文件即可, 如  sh 一栏改为 /usr/local/bin/b
 
 vscode linux-fdisk ddrescue redshift plank unrar you-get( pip 内版本较新) linux-sublime3 linuxqq
 
+### neofetch 输出
+
+```                        `       li@FreeBSD 
+  ` `.....---.......--.```   -/    ---------- 
+  +o   .--`         /y:`      +.   OS: FreeBSD 12.1-RELEASE amd64 
+   yo`:.            :o      `+-    Uptime: 28 mins 
+    y/               -/`   -o/     Packages: 547 (pkg) 
+   .-                  ::/sy+:.    Shell: bash 5.0.16 
+   /                     `--  /    Resolution: 1368x768 
+  `:                          :`   DE: MATE 
+  `:                          :`   WM: Metacity (Marco) 
+   /                          /    WM Theme: Menta 
+   .-                        -.    Theme: Menta [GTK2/3] 
+    --                      -.     Icons: Papirus [GTK2/3] 
+     `:`                  `:`      Terminal: mate-terminal 
+       .--             `--.        Terminal Font: Monospace 10 
+          .---.....----.           CPU: Intel i5-2540M (4) @ 2.594GHz 
+                                   GPU: 2nd Generation Core Processor Family In 
+                                   Memory: 2267MiB / 7705MiB 
+
+
 
 
 
