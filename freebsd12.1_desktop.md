@@ -207,7 +207,25 @@ Memory: 2487MiB / 7705MiB
 
 > linux_enable="YES"
 
-#### Linux for QQ
+#### [Linux for QQ](https://www.bilibili.com/video/BV1LE411a7gw)
+ 
+注：以下为 2019年10月份对 FreeBSD 12 的测试，后续版本未作进一步测试。
+
+先安装两个依赖库文件：
+ 
+ > sudo pkg install linux-c7-gtk2 linux-c7-nss
+ 
+ 
+
+后续步骤：
+
+- 1.去腾讯官网下载 x64 架构的 sh 文件
+
+- 2.终端运行此 sh 文件，得到一个压缩包
+
+- 3.将压缩包解压，运行 qq 二进制文件
+
+提示：需要手机 QQ 扫码登录
 
 #### Reaper for Linux
 
