@@ -211,18 +211,13 @@ Memory: 2487MiB / 7705MiB
 
 #### Reaper for Linux
 
+下载 reaperXXX_linux_x86_64,解压后，按照指示步骤安装。终端启动，会显示如下错误
 
+`./reaper: error while loading shared libraries: libasound.so.2: cannot open shared object file: No such file or directory
+`
+可以看出，是缺乏库文件所致，解决方法为：
 
-
-
-
-
-
-    
-    
-    
-    
-    
+> sudo pkg install linux-c7-alsa-lib alsa-lib
     
     
     
