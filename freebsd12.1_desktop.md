@@ -91,7 +91,7 @@ hald_enable="YES"
 
 ### [显卡驱动](https://wiki.freebsd.org/Graphics#AMD_Graphics)
 
-> sudo pkg install drm-komd
+> sudo pkg install drm-kmod
 
 这个 drm-kmod 就是移植的 intel/amd 的显卡驱动,安装完成之后需要手动添加,如下:
 
