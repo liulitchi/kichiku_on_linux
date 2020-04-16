@@ -101,6 +101,9 @@ hald_enable="YES"
 
 - 如果为 HD7000 以前的 AMD 显卡，请打开 /etc/rc.conf，添加`kld_list="/boot/modules/radeonkms.ko`。
 
+### 视频硬解
+
+> sudo pkg install xf86-video-intel libva-intel-driver
     
 添加中文字体： pkg install noto-sc
     
