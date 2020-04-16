@@ -237,4 +237,4 @@ Memory: 2487MiB / 7705MiB
 
 > sudo pkg install linux-c7-alsa-lib alsa-lib
     
-#### 
+#### WPS for Linux
