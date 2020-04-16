@@ -199,7 +199,17 @@ Memory: 2487MiB / 7705MiB
 ```
 
 
-### 测试安装 reaper for linux
+### 测试安装 Linux 兼容软件 
+
+> sudo pkg install linux_base-c7
+
+打开 /etc/rc.conf，添加：
+
+> linux_enable="YES"
+
+#### Linux for QQ
+
+#### Reaper for Linux
 
 
 
