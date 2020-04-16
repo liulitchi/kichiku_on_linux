@@ -1,6 +1,6 @@
 ## 第一部分
     
-默认安装了 FreeBSD 12.1 后，默认界面是黑黢黢的终端。试着安装一下 Mate 桌面，并进行一些后续操作，做一下记录，以供查阅。
+安装 FreeBSD 12.1 后，默认界面是黑黢黢的终端。试着安装一下 Mate 桌面，并进行一些后续操作，做一下记录，以供查阅。
     
 第一步，改源。
 先用root账号登录系统。FreeBSD 12.1 默认安装了 vi 和 ee 两个文本阅读器，选择一个适合的
@@ -93,13 +93,13 @@ hald_enable="YES"
 
 > sudo pkg install drm-kmod
 
-这个 drm-kmod 就是移植的 intel/amd 的显卡驱动,安装完成之后需要手动添加,如下:
+这个 drm-kmod 就是移植的 linux 版的 intel/amd 显卡驱动,安装完成之后需要手动添加。打开 /etc/rc.conf ，对应显卡如下:
 
-- 如果为 intel 核心显卡 ,请打开 /etc/rc.conf ,添加 `kld_list="/boot/modules/i915kms.ko"`。
+- 如果为 intel 核心显卡，添加 `kld_list="/boot/modules/i915kms.ko"`。
 
-- 如果为 HD7000 以后的 AMD 显卡，请打开 /etc/rc.conf，添加`kld_list="/boot/modules/amdgpu.ko`。
+- 如果为 HD7000 以后的 AMD 显卡，添加`kld_list="/boot/modules/amdgpu.ko`。
 
-- 如果为 HD7000 以前的 AMD 显卡，请打开 /etc/rc.conf，添加`kld_list="/boot/modules/radeonkms.ko`。
+- 如果为 HD7000 以前的 AMD 显卡，添加`kld_list="/boot/modules/radeonkms.ko`。
 
 ### 视频硬解
 
@@ -237,5 +237,4 @@ Memory: 2487MiB / 7705MiB
 
 > sudo pkg install linux-c7-alsa-lib alsa-lib
     
-    
-    
+#### 
