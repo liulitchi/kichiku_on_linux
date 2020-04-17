@@ -1,19 +1,21 @@
 ## 第一部分
     
-安装 FreeBSD 12.1 后，默认界面是黑黢黢的终端。试着安装一下 Mate 桌面，并进行一些后续操作，做一下记录，以供查阅。
+FreeBSD 12.1-release 安装完成后，默认界面是黑黢黢的终端。为此我们试着安装 Mate 桌面，并进行一些后续操作。
     
 第一步，改源。
+
 先用root账号登录系统。FreeBSD 12.1 默认安装了 vi 和 ee 两个文本阅读器，选择一个适合的
 
-vi /etc/pkg/FreeBSD.conf
+> vi /etc/pkg/FreeBSD.conf
 
 将文本内enable后的yes ，改为 no。这一步是禁止官方源。
     
- 然后新建源文本。
- mkdir -p /usr/local/etc/pkg/repos/  这一步是新建文件夹
+ 
+ 然后新建源文本:
+ 
+ > mkdir -p /usr/local/etc/pkg/repos/  #这一步是新建文件夹
 
-vi /usr/local/etc/pkg/repos/FreeBSD.conf 这一步是新建配置文件 FreeBSD.conf
-  
+`vi /usr/local/etc/pkg/repos/FreeBSD.conf`， 这一步是新建配置文件 FreeBSD.conf
   
 打开后，添加以下内容：
     
@@ -28,9 +30,9 @@ FreeBSD: {
 
 保存文本后，就可以开始更新源了
     
-> pkg update
+> pkg update -y
     
-> pkg upgrade
+> pkg upgrade -y
     
     
 安装必要软件： sudo 和 vim
@@ -54,15 +56,14 @@ vi打开sudo:
 安装成功后，继续配置
     
 > vim /etc/rc.conf
+
 添加以下内容：
+
 ```
 moused_enable="YES"
 dbus_enable="YES"
 hald_enable="YES"
 ````
-
-
-
 
 安装显示管理器（登录管理器）：
     
@@ -70,14 +71,14 @@ hald_enable="YES"
     
 启用登录管理器:
     
-> vim /etc/rc.conf 里添加一行 `slim_enable="YES"`
+> vim /etc/rc.conf， 添加一行 `slim_enable="YES"`
 
 默认用户自动登录：
 
-> vim /usr/local/etc/slim.conf ，找到 auto_login,取消注释， 这一行变为`auto_login yes`。同时找到 default_user , 这一行变为`default_user   你的用户名`  。保存后退出。
+> vim /usr/local/etc/slim.conf ，找到 auto_login,取消注释，这一行变为`auto_login yes`。同时找到 default_user , 这一行变为`default_user   你的用户名` 。保存后退出。
     
-退出系统，使用普通账号登录系统。
-    
+退出系统，使用普通账号登录系统，如下：
+
 > cd ~
     
 > vim .xinitrc (创建一个新文档)
@@ -93,7 +94,7 @@ hald_enable="YES"
 
 > sudo pkg install drm-kmod
 
-这个 drm-kmod 就是移植的 linux 版的 intel/amd 显卡驱动,安装完成之后需要手动添加。打开 /etc/rc.conf ，对应显卡如下:
+这个 drm-kmod 就是移植的 linux 版的 intel/amd 显卡驱动,安装完成之后需要手动添加。打开 /etc/rc.conf ，如下:
 
 - 如果为 intel 核心显卡，添加 `kld_list="/boot/modules/i915kms.ko"`。
 
@@ -105,6 +106,8 @@ hald_enable="YES"
 
 > sudo pkg install xf86-video-intel libva-intel-driver
     
+### 一些软件
+
 添加中文字体： pkg install noto-sc
     
 安装网络管理器： pkg install networkmgr
@@ -130,7 +133,7 @@ export QT_IM_MODULE=fcitx
     
 查看无线硬件型号： > pciconf -lv
     
-我的笔记本显示出无线型号为 RTL8188CU，查阅手册发现，开启 rtwn 模块即可开启无线，步骤如下（其它无线模块大同小异）：
+以我的笔记本为例，无线型号为 RTL8188CU 。查阅手册发现，开启 rtwn 模块即可开启无线，步骤如下（其它无线模块大同小异）：
     
 打开 `/boot/loader.conf` ,添加以下内容：
 
@@ -152,7 +155,7 @@ ifconfig_wlan0="WPA DHCP"
 
 > sudo /etc/rc.d/netif restart
 
-如何仍不起作用，终端再输入
+如何仍不起作用，终端输入：
 
 > sudo ifconfig wlan0 up
 
@@ -176,7 +179,7 @@ chsh 用户名，然后编辑文件即可, 如  sh 一栏改为 /usr/local/bin/b
 
 ### 部分软件
 
-vscode linux-fdisk ddrescue redshift plank unrar you-get( pip 内版本较新) linux-sublime3 linuxqq
+vscode linux-fdisk ddrescue redshift plank unrar you-get( pip版本较新) linux-sublime3 linuxqq
 
 ### neofetch --off 输出
 
@@ -209,15 +212,13 @@ Memory: 2487MiB / 7705MiB
 
 #### [Linux for QQ](https://www.bilibili.com/video/BV1LE411a7gw)
  
-注：以下为 2019年10月份对 FreeBSD 12 的测试，后续版本未作进一步测试。
+注：QQ 为 2019年10月在 FreeBSD 12 上的测试，后续版本未作进一步测试。
 
 先安装两个依赖库文件：
  
  > sudo pkg install linux-c7-gtk2 linux-c7-nss
  
- 
-
-后续步骤：
+ 后续步骤：
 
 - 1.去腾讯官网下载 x64 架构的 sh 文件
 
@@ -236,5 +237,7 @@ Memory: 2487MiB / 7705MiB
 可以看出，是缺乏库文件所致，解决方法为：
 
 > sudo pkg install linux-c7-alsa-lib alsa-lib
+
+然后就可成功开启，测试 reaper 6.0.8 成功运行
     
 #### WPS for Linux
