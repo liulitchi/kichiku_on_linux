@@ -94,7 +94,7 @@ hald_enable="YES"
 
 > sudo pkg install drm-kmod
 
-这个 drm-kmod 就是移植的 linux 版的 intel/amd 显卡驱动,安装完成之后需要手动添加。打开 /etc/rc.conf ，如下:
+drm-kmod 为从 linux 移植的 intel/amd 显卡驱动,安装完成后需要手动添加。打开 /etc/rc.conf ，如下:
 
 - 如果为 intel 核心显卡，添加 `kld_list="/boot/modules/i915kms.ko"`。
 
