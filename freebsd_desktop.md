@@ -1,6 +1,6 @@
 ## 第一部分
     
-FreeBSD 12.1-release 安装完成后，默认界面是黑黢黢的终端。为此我们试着安装 Mate 桌面，并进行一些后续操作。
+FreeBSD 12.1-release 安装完成后，默认界面是黑黢黢的终端。我们试着安装 Mate 桌面。
     
 第一步，改源。
 
@@ -8,12 +8,12 @@ FreeBSD 12.1-release 安装完成后，默认界面是黑黢黢的终端。为�
 
 > vi /etc/pkg/FreeBSD.conf
 
-将文本内enable后的yes ，改为 no。这一步是禁止官方源。
+将文本内 enable 后的 yes 改为 no。这一步是禁止官方源。
     
  
  然后新建源文本:
  
- > mkdir -p /usr/local/etc/pkg/repos/  #这一步是新建文件夹
+ > mkdir -p /usr/local/etc/pkg/repos/  #新建文件夹
 
 `vi /usr/local/etc/pkg/repos/FreeBSD.conf`， 这一步是新建配置文件 FreeBSD.conf
   
@@ -98,9 +98,9 @@ hald_enable="YES"
 
 - 如果为 intel 核心显卡，添加 `kld_list="/boot/modules/i915kms.ko"`。
 
-- 如果为 HD7000 以后的 AMD 显卡，添加`kld_list="/boot/modules/amdgpu.ko`。
+- 如果为 HD7000 以后的 AMD 显卡，添加`kld_list="/boot/modules/amdgpu.ko"`。
 
-- 如果为 HD7000 以前的 AMD 显卡，添加`kld_list="/boot/modules/radeonkms.ko`。
+- 如果为 HD7000 以前的 AMD 显卡，添加`kld_list="/boot/modules/radeonkms.ko"`。
 
 ### 视频硬解
 
@@ -108,13 +108,15 @@ hald_enable="YES"
     
 ### 一些软件
 
-添加中文字体： pkg install noto-sc
+中文字体： pkg install noto-sc
     
-安装网络管理器： pkg install networkmgr
+网络管理器： pkg install networkmgr
 
-安装软件包管理器：octopkg
+软件包管理器：octopkg
+
+dock 栏：papirus-icon-theme
     
-安装中文输入法： pkg install zh-fcitx zh-fcitx-libpinyin zh-fcitx-configtool
+中文输入法： pkg install zh-fcitx zh-fcitx-libpinyin zh-fcitx-configtool
     
 根据安装后的提示，执行 vim .xinitrc，添加以下内容
     
