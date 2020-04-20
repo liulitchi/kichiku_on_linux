@@ -118,6 +118,7 @@ dock 栏：papirus-icon-theme
     
 中文输入法： pkg install zh-fcitx zh-fcitx-libpinyin zh-fcitx-configtool
     
+<s>
 根据安装后的提示，执行 vim .xinitrc，添加以下内容
     
 ```
@@ -126,6 +127,7 @@ export GTK_IM_MODULE=fcitx
 export GTK3_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 ```
+</s>
 
 输入法配置
 
@@ -164,8 +166,35 @@ ifconfig_wlan0="WPA DHCP"
 
 ### 修改 sh
 
-chsh 用户名，然后编辑文件即可, 如  sh 一栏改为 /usr/local/bin/bash
+chsh 用户名，然后编辑文件即可, 如  sh 一栏改为 /usr/csh or /usr/local/bin/bash。建议默认设置为 csh 。
 
+### 终端(csh)配置输入法
+
+在 .cshrc 和 /etc/csh.cshrc 中添加如下：
+ 
+ ```
+setenv XMODIFIERS @im=fcitx
+
+setenv GTK_IM_MODULE fcitx
+
+setenv GTK2_IM_MODULE fcitx
+
+setenv GTK3_IM_MODULE fcitx
+
+setenv QT_IM_MODULE fcitx
+
+setenv QT4_IM_MODULE fcitc
+```
+
+### 设置终端识别和输入中文
+
+  在 .cshrc 和 /etc/csh.cshrc 中添加两行：
+  
+  > setenv LANG en_US.UTF-8
+  
+  > setenv MM_CHARSET en_US.UTF-8
+  
+  
 ### 自动挂载U盘
 
 > pkg install automount
