@@ -183,7 +183,7 @@ setenv GTK3_IM_MODULE fcitx
 
 setenv QT_IM_MODULE fcitx
 
-setenv QT4_IM_MODULE fcitc
+setenv QT4_IM_MODULE fcitx
 ```
 
 ### 设置终端识别和输入中文
