@@ -218,7 +218,7 @@ setenv QT4_IM_MODULE fcitx
 
 - fusefs-ext2 : 支持读写 ext2, ext3, ext4 
 
-- fusfefs-lkl : 将linux 内科变为库文件，支持读写 BTFRS, XFS, EXT3, EXT4
+- fusfefs-lkl : 将 linux 内核变为库文件，支持读写 BTFRS, XFS, EXT3, EXT4
  
 ## 第三部分
 
