@@ -211,6 +211,14 @@ setenv QT4_IM_MODULE fcitx
 ### 自动挂载U盘
 
 > pkg install automount
+
+对应软件：
+
+- fusefs-ext4fuse : 只读
+
+- fusefs-ext2 : 支持读写 ext2, ext3, ext4 
+
+- fusfefs-lkl : 将linux 内科变为库文件，支持读写 BTFRS, XFS, EXT3, EXT4
  
 ## 第三部分
 
