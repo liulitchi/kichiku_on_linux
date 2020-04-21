@@ -30,9 +30,9 @@ FreeBSD: {
 
 保存文本后，就可以开始更新源了
     
-> pkg update -y
+> pkg update 
     
-> pkg upgrade -y
+> pkg upgrade 
     
     
 安装必要软件： sudo 和 vim
@@ -77,9 +77,11 @@ hald_enable="YES"
 
 > vim /usr/local/etc/slim.conf ，找到 auto_login,取消注释，这一行变为`auto_login yes`。同时找到 default_user , 这一行变为`default_user   你的用户名` 。保存后退出。
     
-退出系统，使用普通账号登录系统，如下：
+退出系统，
 
-> cd ~
+> exit
+
+使用普通账号登录系统。
     
 > vim .xinitrc (创建一个新文档)
     
@@ -142,6 +144,8 @@ export QT_IM_MODULE=fcitx
 打开 `/boot/loader.conf` ,添加以下内容：
 
 ```   
+if_rtwn_load="YES"
+
 if_rtwn_pci_load="YES"
 
 legal.realtek.license_ack=1
@@ -153,6 +157,15 @@ legal.realtek.license_ack=1
 wlans_rtwn0="wlan0"
 
 ifconfig_wlan0="WPA DHCP" 
+```
+
+vim /etc/wpa_suppplicant.conf，添加：
+
+```
+network={
+    ssid="无线名称"
+    psk="无线密码"
+    }
 ```
 
 然后重启 netif
