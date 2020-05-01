@@ -98,7 +98,7 @@
  
  > sudo pkg_add gdm  # gdm 为登录管理器
  
- > sudo pkg_add gnome gnome-terminal # Gnome 桌面所需软件
+ > sudo pkg_add gnome-session gnome-terminal nautilus metacity gnome-panel # Gnome 桌面所需软件，后续可继续添加
  
  > sudo pkg_add firefox chromium thunderbird vlc audacity bash redshift neofetch # 部分软件，以后可酌量添加
  
