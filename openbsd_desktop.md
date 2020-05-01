@@ -20,7 +20,7 @@
  
  > pkg_add vim # 出现多个选项，如果想在未来使用 Gvim，可以选择 vim-gtk3
  
- ### 3 给普通用户添加权限
+ ### 3 给普通账号添加权限
  
  > visudo
  
@@ -29,6 +29,35 @@
  ### 4 安装桌面和登录管理器
  
  `> exit`退出 root 账号，使用普通账号登录。
+ 
+ #### 4.1 安装 Mate 桌面
+ 
+ 注意：为防止误操作，本节命令皆为在普通账号下操作。
+ 
+ #### 所需安装软件
+ 
+ > sudo pkg_add slim  # slim 为登录管理器，替换选项 lightdm
+ 
+ > sudo pkg_add mate mate-extras # Mate 桌面所需软件
+ 
+ > sudo pkg_add firefox chromium thunderbird vlc audacity bash redshift neofetch # 部分软件，以后可酌量添加
+ 
+ #### 配置文件 
+ 
+ > vim .xinitrc ，添加 `exec mate-session`
+ 
+ > sudo vim /root/.xinitrc ，添加 `exec mate-session`
+ 
+ > sudo vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`
+ 
+ > sudo vim /etc/rc.conf.local ，添加
+ 
+ ```
+ pkg_scripts="dbus_daemon avahi_daemon"
+ dbus_enable=YES
+ ```
+ 重启电脑即可进入桌面。
+ 
  
  
  
