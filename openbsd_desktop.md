@@ -28,7 +28,7 @@
  
  ### 4 安装桌面和登录管理器
  
- `> exit`退出 root 账号，使用普通账号登录。
+ 执行`exit`命令退出 root 账号，使用普通账号登录。
  
  #### 4.1 安装 Mate 桌面
  
@@ -36,13 +36,15 @@
  
  #### 所需安装软件
  
- > sudo pkg_add slim  # slim 为登录管理器，替换选项 lightdm
+ > sudo pkg_add slim  # slim 为登录管理器，替换选项为 lightdm
  
  > sudo pkg_add mate mate-extras # Mate 桌面所需软件
  
  > sudo pkg_add firefox chromium thunderbird vlc audacity bash redshift neofetch # 部分软件，以后可酌量添加
  
  #### 配置文件 
+ 
+ > cd ~
  
  > vim .xinitrc ，添加 `exec mate-session`
  
@@ -58,6 +60,68 @@
  ```
  重启电脑即可进入桌面。
  
+ #### 4.2 安装 Xfce 桌面
+ 
+ 注意：为防止误操作，本节命令皆为在普通账号下操作。
+ 
+ #### 所需安装软件
+ 
+ > sudo pkg_add slim  # slim 为登录管理器
+ 
+ > sudo pkg_add xfce  # Xfce 桌面所需软件
+ 
+ > sudo pkg_add firefox chromium thunderbird vlc audacity bash redshift neofetch # 部分软件，以后可酌量添加
+ 
+  #### 配置文件 
+   
+ > cd ~ 
+ 
+ > vim .xinitrc ，添加 `exec startxfce4`
+ 
+ > sudo vim /root/.xinitrc ，添加 `exec startxfce4`
+ 
+ > sudo vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`
+ 
+ > sudo vim /etc/rc.conf.local ，添加
+ 
+ ```
+ pkg_scripts="dbus_daemon avahi_daemon"
+ dbus_enable=YES
+ ```
+重启电脑即可进入桌面。
+
+ #### 4.3 安装 Gnome 桌面
+ 
+ 注意：为防止误操作，本节命令皆为在普通账号下操作。
+ 
+ #### 所需安装软件
+ 
+ > sudo pkg_add gdm  # gdm 为登录管理器
+ 
+ > sudo pkg_add gnome gnome-terminal # Gnome 桌面所需软件
+ 
+ > sudo pkg_add firefox chromium thunderbird vlc audacity bash redshift neofetch # 部分软件，以后可酌量添加
+ 
+ #### 配置文件 
+ 
+ > cd ~
+ 
+ > vim .xinitrc ，添加 `exec gnome-session`
+ 
+ > sudo vim /root/.xinitrc ，添加 `exec gmome-session`
+ 
+ 
+ > sudo vim /etc/rc.conf.local ，修改内容为：
+ 
+ ```
+ xdm_flags=NO #xdm 为 openbsd 默认启动器，屏蔽替换为 gdm
+ gnome_enable=YES
+ gdm_enable=YES
+ pkg_scripts="messagebus dbus_daemon avahi_daemon gdm"
+ sshd_flag=NO       #ssh 设置，如非必要可关闭
+ multicast_host=YES #这一行不知道啥意思
+```
+ 重启电脑即可进入桌面。
  
  
  
