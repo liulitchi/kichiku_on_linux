@@ -24,7 +24,7 @@
  
  > visudo
  
- 然后添加一行 `$User ALL=(ALL) SETENV=ALL` （请将 $user 替换为你的用户名)，保存后退出。
+ 然后添加一行 `$User ALL=(ALL) SETENV: ALL` （请将 $user 替换为你的用户名)，保存后退出。
  
  ### 4 安装桌面和登录管理器
  
