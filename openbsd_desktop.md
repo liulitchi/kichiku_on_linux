@@ -12,7 +12,7 @@
 
  > vim /etc/installurl
  
- 注释掉默认源，并添加一行国内源 `https://mirrors.tuna.tsinghua.edu.cn/OpenBSD`，保存后退出。
+ 注释掉默认源，改为国内源 `https://mirrors.tuna.tsinghua.edu.cn/OpenBSD`[^1]，保存后退出。
  
  ### 2 安装所需软件
  
@@ -141,3 +141,4 @@
  
  ## 八 显卡驱动
  
+[^1]: 此处选择了清华镜像源，也可选择[华为镜像源](https://mirrors.huaweicloud.com/OpenBSD) 。
