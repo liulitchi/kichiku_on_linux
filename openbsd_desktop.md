@@ -38,7 +38,7 @@
  
  > sudo pkg_add slim  # slim 为登录管理器，替换选项为 lightdm
  
- > sudo pkg_add mate mate-extras # Mate 桌面所需软件
+ > sudo pkg_add mate mate-utils mate-extras # Mate桌面所需软件
  
  > sudo pkg_add firefox chromium thunderbird vlc audacity bash redshift neofetch # 部分软件，以后可酌量添加
  
@@ -55,8 +55,11 @@
  > sudo vim /etc/rc.conf.local ，添加
  
  ```
+ xdm_flags=NO
+ sshd_flags=NO
  pkg_scripts="dbus_daemon avahi_daemon"
  dbus_enable=YES
+ multicast_host=YES
  ```
  重启电脑即可进入桌面。
  
@@ -85,8 +88,11 @@
  > sudo vim /etc/rc.conf.local ，添加
  
  ```
+ xdm_flags=NO
+ sshd_flags=NO
  pkg_scripts="dbus_daemon avahi_daemon"
  dbus_enable=YES
+ multicast_host=YES
  ```
 重启电脑即可进入桌面。
 
@@ -118,7 +124,7 @@
  gnome_enable=YES
  gdm_enable=YES
  pkg_scripts="messagebus dbus_daemon avahi_daemon gdm"
- sshd_flag=NO       #ssh 设置，如非必要可关闭
+ sshd_flags=NO       #ssh设置，需要时可开启
  multicast_host=YES #这一行不知道啥意思
 ```
  重启电脑即可进入桌面。
@@ -133,12 +139,48 @@
  
  ## 四 中文化
  
- ## 五 主题和图标美化
+ ### 1 安装中文字体
+ 
+ > sudo pkg_add noto-cjk noto-emoji
+ 
+ ### 2 安装 fcitx
+ 
+ > sudo pkg_add fcitx fcitx-pinyin libpinyin
+ 
+ ### 3 设置中文
+ 
+ ## 五 主题和图标
+ 
+ ### 1 提前准备
+ 
+ > sudo pkg_add git bash
+ 
+ ### 2 图标安装
+ 
+ > git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+ 
+ > cd papirus-icon-theme
+ 
+ > ./install.sh
+ 
+ ### 3 主题安装
+ 
+ > bash
+
+ >git clone https://github.com/vinceliuice/Qogir-theme
+
+ > cd Qogir-theme
+
+ > vim install.sh ，更改第一行(shebang)，将`#!/bin/bash`修改为`#!/usr/local/bin/bash`，而后保存
+
+ > ./install.sh
  
  ## 六 挂载U盘
  
  ## 七 无线测试
  
  ## 八 显卡驱动
+ 
+ ## 九 技巧问答
  
 [^1]: 此处选择了清华镜像源，也可选择[华为镜像源](https://mirrors.huaweicloud.com/OpenBSD) 。
