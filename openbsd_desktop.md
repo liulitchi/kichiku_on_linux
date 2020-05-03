@@ -208,6 +208,6 @@
  答：也不能这么说，时间是好的武器，五年前的 Linux 比不现今的 Linux，同样的道理，五年后的 OpenBSD 肯定会有不一样的表现，我们应心怀希望。
  问：那你自己使用哪个系统？
  答：我的最爱 Debian + Mate 。
- 
+ ```
  
 [^1]: 此处选择了清华镜像源，也可选择[华为镜像源](https://mirrors.huaweicloud.com/OpenBSD) 。
