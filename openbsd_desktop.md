@@ -131,11 +131,11 @@
  
  ## 三 软件管理
  
- 查看软件： `pkg_info -Q pkg`
+ 查找软件： `pkg_info -Q foo`
  
  安装软件： `pkg_add foo`
  
- 删除缓冲： `pkg_delete -a`
+ 删除缓冲： 
  
  ## 四 中文化
  
