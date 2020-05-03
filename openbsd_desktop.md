@@ -4,7 +4,7 @@
 
 ## 二 安装桌面
 
-系统安装完成后重启,OpenBSD 会自动检测无线、显卡和声卡并加载，简直业界良心。虽然源地址在国外，但是速度并没有想象中的缓慢，静待几分钟，让其自行更新驱动。
+系统安装完成后重启,OpenBSD 会自动检测无线、显卡和声卡并下载驱动，简直业界良心。虽然源地址在国外，但是速度并没有想象中缓慢，静等几分钟，待其自行更新。
 
 ### 1 更新源地址
 
@@ -40,7 +40,7 @@
  
  > sudo pkg_add mate mate-utils mate-extras # Mate桌面所需软件
  
- > sudo pkg_add firefox chromium thunderbird vlc audacity bash redshift neofetch # 部分软件，以后可酌量添加
+ > sudo pkg_add firefox chromium thunderbird vlc audacity redshift neofetch # 部分软件，以后可酌量添加
  
  #### 配置文件 
  
@@ -182,5 +182,32 @@
  ## 八 显卡驱动
  
  ## 九 技巧问答
+ 
+ ```
+ 问：firefox观看优酷和B站时提示安装flash插件，如何解决？
+ 答：安装chromium并浏览视频，注销后重新进入，firefxo会显示正常。
+ 问：是什么原理呢？
+ 答：我也不清楚。
+ ```
+ 
+ ```
+ 问：为什么firefox搜不到插件？
+ 答：很抱歉，openbsd暂不支持。
+ 问：可是，FreeBSD里面就可以用啊？
+ 答：这个……或许可以联系原作者，或者自己造轮子。
+ 问：没得到任何有用信息
+ 答：汗
+ ```
+ 
+ ```
+ 问：可以拿OpenBSD来当生产力工具么？
+ 答：这个……如果使用服务器，可以给 BSD 一个机会。至于桌面环境，目前我还是推荐 Linux 系统。
+ 问：为什么会这么说？
+ 答：根据我的实际体验，比如在 OpenBSD 6.7 下用 firefox 浏览B 站视频，480P的分辨率下就发热量巨大，通风口明显感觉烫手;而用Debian 10 观看同样的视频，1080P 的分辨率下也仅仅是少量发热。
+ 问：那就是说OpenBSD战五渣喽？
+ 答：也不能这么说，时间是好的武器，五年前的 Linux 比不现今的 Linux，同样的道理，五年后的 OpenBSD 肯定会有不一样的表现，我们应心怀希望。
+ 问：那你自己使用哪个系统？
+ 答：我的最爱 Debian + Mate 。
+ 
  
 [^1]: 此处选择了清华镜像源，也可选择[华为镜像源](https://mirrors.huaweicloud.com/OpenBSD) 。
