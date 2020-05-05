@@ -135,7 +135,7 @@
  
  安装软件： `pkg_add foo`
  
- 删除缓冲： 
+ 升级软件： `pkg_add -iu foo` # i:interactive mode ，u:update
  
  ## 四 中文化
  
