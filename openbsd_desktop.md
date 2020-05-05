@@ -24,7 +24,7 @@
  
  > visudo
  
- 然后添加一行 `$User ALL=(ALL) SETENV: ALL` （请将 $user 替换为你的用户名)，保存后退出。
+ 然后添加一行 `$User ALL=(ALL) SETENV: ALL` （请将 $User 替换为你的用户名)，保存后退出。
  
  ### 4 安装桌面和登录管理器
  
@@ -36,7 +36,7 @@
  
  #### 所需安装软件
  
- > sudo pkg_add slim  # slim 为登录管理器，替换选项为 lightdm
+ > sudo pkg_add slim  [^2]
  
  > sudo pkg_add mate mate-utils mate-extras # Mate桌面所需软件
  
@@ -191,12 +191,11 @@
  ```
  
  ```
- 问：为什么firefox搜不到插件？
- 答：很抱歉，openbsd暂不支持。
- 问：可是，FreeBSD里面就可以用啊？
- 答：这个……或许可以联系原作者，或者自己造轮子。
- 问：没得到任何有用信息
- 答：汗
+ 问：为什么 firefox 搜不到插件？
+ 答：有概率会显示平台错误，直接去 github 搜索下载吧。
+ 问：可是，FreeBSD 平台下就可以直接搜索火狐插件？
+ 答：这是个玄学问题。
+ 问：汗
  ```
  
  ```
@@ -211,3 +210,5 @@
  ```
  
 [^1]: 此处选择了清华镜像源，也可选择[华为镜像源](https://mirrors.huaweicloud.com/OpenBSD) 。
+
+[^2]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
