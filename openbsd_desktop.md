@@ -139,15 +139,34 @@
  
  ## 四 中文化
  
- ### 1 安装中文字体
+ ### 1 安装字体
  
  > sudo pkg_add noto-cjk noto-emoji
  
- ### 2 安装 fcitx
+ ### 2 安装输入法
  
- > sudo pkg_add fcitx fcitx-pinyin libpinyin
+ > sudo pkg_add fcitx[^3] libpinyin[^4]
  
- ### 3 设置中文
+ ### 3 设置界面中文
+ 
+ > vim ~/.profile ，添加以下：
+ 
+ ```
+export LANG="zh_CN.UTF-8"
+export LC_CTYPE="zh_CN.UTF-8"               
+export LC_COLLATE="zh_CN.UTF-8"               
+export LC_TIME="zh_CN.UTF-8"                
+export LC_NUMERIC="zh_CN.UTF-8"               
+export LC_MONETARY="zh_CN.UTF-8"        
+export LC_MESSAGES="zh_CN.UTF-8"       
+export LC_ALL="zh_CN.UTF-8"
+
+export XIM_PROGRAM=fcitx
+export XIM=fcitx
+export XMODIFIERS="@im=fcitx"
+export QT_IM_MODULE=XIM
+export GTK_IM_MODULE=XIM
+```
  
  ## 五 主题和图标
  
@@ -212,3 +231,7 @@
 [^1]: 此处选择了清华镜像源，也可选择[华为镜像源](https://mirrors.huaweicloud.com/OpenBSD) 。
 
 [^2]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
+
+[^3]: OpenBSD 二进制包暂未包含`fcitx`配置文件包。
+
+[^4]: 虽然有 `fcitxi-pinyin` 可选，但此处建议改为更易用的 `libpinyin`
