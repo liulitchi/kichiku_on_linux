@@ -196,7 +196,7 @@ export GTK_IM_MODULE=XIM
  
  ## 六 挂载可移动磁盘
  
- 使用`dmesg`命令来查看新插入的盘符，如对于盘符为`sd3`的fat32的U盘，习惯名为`sd3i`。
+ 使用`dmesg`命令来查看新插入的盘符，如格式为fat32的U盘，可能在openbsd系统里盘符为sd3，则按习惯命名为`sd3i`。
  
  > cd ~
  
@@ -212,7 +212,7 @@ export GTK_IM_MODULE=XIM
  
  ### 挂载`NTFS`格式的 U 盘 
  
- > sudo mount /dev/sd2k /home/$USER/media/
+ > sudo mount /dev/sd2k /home/$USER/media/second
   
  ### 挂载`ext2/ext3`格式的 U 盘 
  
