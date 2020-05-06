@@ -147,7 +147,7 @@
  
  > sudo pkg_add fcitx[^3] libpinyin[^4]
  
- ### 3 设置界面中文
+ ### 3 设置中文
  
  > vim ~/.profile ，添加以下：
  
@@ -194,7 +194,7 @@ export GTK_IM_MODULE=XIM
 
  > ./install.sh
  
- ## 六 挂载U盘
+ ## 六 挂载可移动磁盘
  
  使用`dmesg`命令来查看新插入的盘符，如对于盘符为`sd3`的fat32的U盘，习惯名为`sd3i`。
  
