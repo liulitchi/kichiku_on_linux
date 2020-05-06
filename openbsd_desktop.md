@@ -196,11 +196,45 @@ export GTK_IM_MODULE=XIM
  
  ## 六 挂载U盘
  
+ 使用`dmesg`命令来查看新插入的盘符，如对于盘符为`sd3`的fat32的U盘，习惯名为`sd3i`。
+ 
+ > cd ~
+ 
+ > mkdir media
+ 
+ > cd media
+ 
+ > mkdir first second third forth
+ 
+ ### 挂载`fat32`格式的 U 盘 
+ 
+ > sudo mount /dev/sd3i /home/$USER/media/first
+ 
+ ### 挂载`NTFS`格式的 U 盘 
+ 
+ > sudo mount /dev/sd2k /home/$USER/media/
+  
+ ### 挂载`ext2/ext3`格式的 U 盘 
+ 
+  > sudo mount /dev/sd1l /home/$USER/media/third
+  
+ ### 挂载`CD`磁盘 
+ 
+  > sudo mount /dev/cd0a /home/$USER/media/forth
+  
+ ### 卸载磁盘
+ 
+ > sudo umount /home/$User/media/first
+ 
  ## 七 无线测试
  
  ## 八 显卡驱动
  
- ## 九 技巧问答
+ ## 九 补遗
+ 
+ ### 参考书籍
+ 
+ ### 技巧问答
  
  ```
  问：firefox观看优酷和B站时提示安装flash插件，如何解决？
@@ -234,4 +268,4 @@ export GTK_IM_MODULE=XIM
 
 [^3]: OpenBSD 二进制包暂未包含`fcitx`配置文件包。
 
-[^4]: 虽然有 `fcitxi-pinyin` 可选，但此处建议改为更易用的 `libpinyin`
+[^4]: 虽然有 `fcitxi-pinyin` 可选，但此处建议改为更易用的 `zh-libpinyin`
