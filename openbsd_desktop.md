@@ -59,7 +59,7 @@
  sshd_flags=NO
  pkg_scripts="dbus_daemon avahi_daemon"
  dbus_enable=YES
- multicast_host=YES
+ multicast_host=NO
  ```
  重启电脑即可进入桌面。
  
@@ -92,7 +92,7 @@
  sshd_flags=NO
  pkg_scripts="dbus_daemon avahi_daemon"
  dbus_enable=YES
- multicast_host=YES
+ multicast_host=NO
  ```
 重启电脑即可进入桌面。
 
@@ -125,7 +125,7 @@
  gdm_enable=YES
  pkg_scripts="messagebus dbus_daemon avahi_daemon gdm"
  sshd_flags=NO       #ssh设置，需要时可开启
- multicast_host=YES #这一行不知道啥意思
+ multicast_host=NO
 ```
  重启电脑即可进入桌面。
  
@@ -244,11 +244,10 @@ export GTK_IM_MODULE=XIM
  ```
  
  ```
- 问：为什么 firefox 搜不到插件？
- 答：有概率会显示平台错误，直接去 github 搜索下载吧。
- 问：可是，FreeBSD 平台下就可以直接搜索火狐插件？
- 答：这是个玄学问题。
- 问：汗
+ 问：为什么两核四线程的电脑，只有两个框框有波动？
+ 答：OpenBSD会默认检测多核心，似乎线程默认未加载。
+ 问：那要如何操作呢？
+ 答：打开`/etc/rc.local`，添加 > sysctl hw.smt=1 。
  ```
  
  ```
