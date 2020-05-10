@@ -234,6 +234,11 @@ export GTK_IM_MODULE=XIM
  
  ### 参考书籍
  
+ - Absolute OpenBSD
+ 
+ - OpenBSD FAQ
+ 
+ 
  ### 技巧问答
  
  ```
