@@ -247,7 +247,7 @@ export GTK_IM_MODULE=XIM
  问：为什么两核四线程的电脑，只有两个框框有波动？
  答：OpenBSD会默认检测多核心，似乎线程默认未加载。
  问：那要如何操作呢？
- 答：打开`/etc/rc.local`，添加 > sysctl hw.smt=1 。
+ 答：打开 /etc/rc.local ，添加  sysctl hw.smt=1 。
  ```
  
  ```
