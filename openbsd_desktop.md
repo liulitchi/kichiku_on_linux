@@ -255,7 +255,7 @@ export GTK_IM_MODULE=XIM
  
  > visudo ，然后添加一行 `$USER ALL=(ALL) SETENV: ALL` （请将 $USER 替换为你的用户名)，保存后退出。
  
-[^2]: 此处选择了清华镜像源，也可选择[华为镜像源](https://mirrors.huaweicloud.com/OpenBSD) 。
+[^2]: 此处选择了清华镜像源，也可选择[北京外国语大学镜像源](https://mirrors.bfsu.edu.cn/OpenBSD/)、[华为镜像源](https://mirrors.huaweicloud.com/OpenBSD) 。
 
 [^3]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
 
