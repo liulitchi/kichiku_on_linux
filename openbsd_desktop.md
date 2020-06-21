@@ -10,7 +10,7 @@
 
 > su
 
-> vi /etc/doas.conf, 添加`permit ：wheel`后保存。
+> vi /etc/doas.conf, 添加`permit :wheel`后保存。
 
 ### 2 获取 vim
 
