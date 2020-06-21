@@ -57,3 +57,9 @@ autologin-user=你的用户名
  
  sudo dpkg --remove-architecture i386
  ```
+
+## debian 无法启动 virtulabox
+
+> sudo apt install virtualbox-dkms
+
+> sudo modprobe vboxdrv
