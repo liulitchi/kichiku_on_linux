@@ -63,3 +63,38 @@ autologin-user=你的用户名
 > sudo apt install virtualbox-dkms
 
 > sudo modprobe vboxdrv
+
+## vim 配置
+
+> vim .vimrc
+
+```
+" gvim 字体大小
+set guifont=Monospace\ 20
+
+" 语法高亮
+syntax on
+
+" 搜索高亮
+set hlsearch
+
+" Tab 空格长度
+set tabstop=4
+
+" 自动缩进
+set autoindent
+```
+
+## 添加路径（两种方式）
+
+> source $HOME/.local/env 
+
+or
+
+> vim .profile
+
+添加
+
+```
+ export PATH="$HOME/.local/bin:$PATH"
+```
