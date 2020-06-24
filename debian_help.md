@@ -112,3 +112,11 @@ or
 
     重启系统： sudo reboot
 
+## ffmpeg 录屏
+
+
+>  微损 ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac screen.mp4
+
+or
+
+>  无损 ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -c:v ffvhuff screen.mkv
