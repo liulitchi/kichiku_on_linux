@@ -1,11 +1,11 @@
 | Letter       | Code     | Letter       | Code     |
 |------------  |----------|------------  |----------|
-| α            | \alpha   |              |          |
-| \(\beta\)    | \beta    |              |          |
-| \(\gamma\)   | \gamma   | \(\Gamma\)   | \Gamma   |
-| \(\delta\)   | \delta   | \(\Delta\)   | \Delta   |
-| \(\epsilon\) | \epsilon |              |          |
-| \(\zeta\)    | \zeta    |              |          |
+| α            | \alpha   | Α            |          |
+| β            | \beta    | Β            |          |
+| γ            | \gamma   | Γ            | \Gamma   |
+| δ            | \delta   | Δ            | \Delta   |
+| ε            | \epsilon | Ε            |          |
+| ζ            | \zeta    | Ζ            |          |
 | \(\eta\)     | \eta     |              |          |
 | \(\theta\)   | \theta   | \(\Theta\)   | \Theta   |
 | \(\iota\)    | \iota    |              |          |
