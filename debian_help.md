@@ -126,3 +126,7 @@ or
 > wget https://dl.google.com/dl/earth/client/current/google-earth-pro-stable_current_amd64.deb
 
 > sudo dpkg -i google-.deb
+
+## mate network-manager
+
+> sudo apt install network-manager-gnome
