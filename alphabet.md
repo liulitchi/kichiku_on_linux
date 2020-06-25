@@ -6,20 +6,21 @@
 | δ            | \delta   | Δ            | \Delta   |
 | ε            | \epsilon | Ε            |          |
 | ζ            | \zeta    | Ζ            |          |
-| \(\eta\)     | \eta     |              |          |
-| \(\theta\)   | \theta   | \(\Theta\)   | \Theta   |
-| \(\iota\)    | \iota    |              |          |
-| \(\kappa\)   | \kappa   |              |          |
-| \(\lambda\)  | \lambda  | \(\Lambda\)  | \Lambda  |
-| \(\mu\)      | \mu      |              |          |
-| \(\nu\)      | \nu      |              |          |
-| \(\xi\)      | \xi      | \(\Xi\)      | \Xi      |
-| \(\omicron\) | \omicron |              |          |
-| \(\pi\)      | \pi      | \(\Pi\)      | \Pi      |
-| \(\rho\)     | \rho     |              |          |
-| \(\sigma\)   | \sigma   | \(\Sigma\)   | \Sigma   |
-| \(\tau\)     | \tau     |              |          |
-| \(\upsilon\) | \upsilon | \(\Upsilon\) | \Upsilon |
-| \(\phi\)     | \phi     | \(\Phi\)     | \Phi     |
-| \(\chi\)     | \chi     |              |          |
-| \(\psi\)     | \psi     | \(\Psi\)     | \Psi     |
+| η            | \eta     | Η            |          |
+| θ            | \theta   | Θ            | \Theta   |
+| ι            | \iota    | Ι            |          |
+| κ            | \kappa   | Κ            |          |
+| λ            | \lambda  | Λ            | \Lambda  |
+| μ            | \mu      | Μ            |          |
+| ν            | \nu      | Ν            |          |
+| ξ            | \xi      | Ξ            | \Xi      |
+| ο            | \omicron | Ο            |          |
+| π            | \pi      | Π            | \Pi      |
+| ρ            | \rho     | Ρ            |          |
+| σ            | \sigma   | Σ            | \Sigma   |
+| τ            | \tau     | Τ            |          |
+| υ            | \upsilon | Υ            | \Upsilon |
+| φ            | \phi     | Φ            | \Phi     |
+| χ            | \chi     | Χ            |          |
+| ψ            | \psi     | Ψ            | \Psi     |
+| ω            | \omega   | Ω            | \Omega   |
