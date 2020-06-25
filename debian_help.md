@@ -120,3 +120,9 @@ or
 or
 
 >  无损 ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -c:v ffvhuff screen.mkv
+
+## 安装谷歌地球
+
+> wget https://dl.google.com/dl/earth/client/current/google-earth-pro-stable_current_amd64.deb
+
+> sudo dpkg -i google-.deb
