@@ -42,8 +42,6 @@
  
  > vim .xinitrc ，添加 `exec mate-session`
  
- > doas vim /root/.xinitrc ，添加 `exec mate-session`
- 
  > doas vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`
  
  > doas vim /etc/rc.conf.local ，添加
