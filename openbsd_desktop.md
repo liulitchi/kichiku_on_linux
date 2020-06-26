@@ -224,6 +224,10 @@ export GTK_IM_MODULE=XIM
  
  ## 九 补遗
  
+ ### ffmpeg 录屏
+ 
+ > ffmpeg -f x11grab -s 1600x900 -i :0 -preset ultrafast -crf 10 screen.mp4 
+ 
  ### 参考书籍
  
  - Absolute OpenBSD
