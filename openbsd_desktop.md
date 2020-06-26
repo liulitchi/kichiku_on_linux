@@ -228,6 +228,7 @@ export GTK_IM_MODULE=XIM
  
  > ffmpeg -f x11grab -s 1600x900 -i :0 -preset ultrafast -crf 10 screen.mp4 
  
+   crf在wiki中是质量，0最好，是无损，51是最差
  ### 参考书籍
  
  - Absolute OpenBSD
