@@ -135,3 +135,11 @@ or
 ## mate network-manager
 
 > sudo apt install network-manager-gnome
+
+## FATAL:setuid_sandbox_host.cc(157)] The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that /tmp/.../chrome-sandbox is owned by root and has ...
+
+> CONFIG_USER_NS=y
+
+> sudo sysctl kernel.unprivileged_userns_clone=1
+
+[from](https://github.com/electron/electron/issues/17972)
