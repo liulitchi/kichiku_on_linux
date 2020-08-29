@@ -16,90 +16,104 @@
 
 > doas pkg_add vim #出现多个选项，如果想在未来使用 Gvim，可以选择 vim-gtk3
 
-### 3 更新源地址
+### 3 更新
+
+### 更新源地址
 
 > doas vim /etc/installurl
- 
- 注释掉默认源，改为国内源 `https://mirrors.tuna.tsinghua.edu.cn/OpenBSD`[^2]，保存后退出。
 
- ### 4 安装桌面和登录管理器
+注释掉默认源，改为国内源 `https://mirrors.tuna.tsinghua.edu.cn/OpenBSD`[^2]，保存后退出。
+
+### 内核更新
+
+> doas syspatch
+
+### 驱动更新
+
+> doas fw_update
+
+### 软件升级
+
+> doas pkg_add -u
+
+### 修改默认shell
+
+> doas chsh
  
- #### 4.1 安装 Mate 桌面
+### 4 安装桌面和登录管理器
  
- 注意：为防止误操作，本节命令皆为在普通账号下操作。
+#### 4.1 安装 Mate 桌面
  
- #### 所需安装软件
+注意：为防止误操作，本节命令皆为在普通账号下操作。
  
- > doas pkg_add slim  [^3]
+#### 所需安装软件
  
- > doas pkg_add mate mate-utils mate-extras # Mate桌面所需软件
+> doas pkg_add slim  [^3]
  
- > doas pkg_add firefox chromium thunderbird vlc audacity redshift neofetch # 部分软件，以后可酌量添加
+> doas pkg_add mate mate-utils mate-extras # Mate桌面所需软件
  
- #### 配置文件 
+#### 配置文件 
  
- > cd ~
+> cd ~。
+
  
- > vim .xinitrc ，添加 `exec mate-session`
+> vim .xinitrc ，添加 `exec mate-session`
  
- > doas vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`
+> doas vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`。
+
+> doas vim /etc/rc.conf.local ，添加
  
- > doas vim /etc/rc.conf.local ，添加
- 
- ```
+```
  xdm_flags=NO
  sshd_flags=NO
  pkg_scripts="dbus_daemon avahi_daemon"
  dbus_enable=YES
  multicast_host=NO
- ```
- 重启电脑即可进入桌面。
+```
+重启电脑即可进入桌面。
  
- #### 4.2 安装 Xfce 桌面
+#### 4.2 安装 Xfce 桌面
  
- 注意：为防止误操作，本节命令皆为在普通账号下操作。
+注意：为防止误操作，本节命令皆为在普通账号下操作。
  
- #### 所需安装软件
+#### 所需安装软件
  
- > doas pkg_add slim  # slim 为登录管理器
+> doas pkg_add slim  # slim 为登录管理器
  
- > doas pkg_add xfce  # Xfce 桌面所需软件
+> doas pkg_add xfce  # Xfce 桌面所需软件
  
- > doas pkg_add firefox chromium thunderbird vlc audacity bash redshift neofetch # 部分软件，以后可酌量添加
- 
-  #### 配置文件 
+#### 配置文件 
    
- > cd ~ 
+> cd ~ 
  
- > vim .xinitrc ，添加 `exec startxfce4`
+> vim .xinitrc ，添加 `exec startxfce4`
  
- > doas vim /root/.xinitrc ，添加 `exec startxfce4`
+> doas vim /root/.xinitrc ，添加 `exec startxfce4`
  
- > doas vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`
+> doas vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`
  
- > doas vim /etc/rc.conf.local ，添加
+> doas vim /etc/rc.conf.local ，添加
  
- ```
+```
  xdm_flags=NO
  sshd_flags=NO
  pkg_scripts="dbus_daemon avahi_daemon"
  dbus_enable=YES
  multicast_host=NO
- ```
+```
 重启电脑即可进入桌面。
 
- #### 4.3 安装 Gnome 桌面
+#### 4.3 安装 Gnome 桌面
  
- 注意：为防止误操作，本节命令皆为在普通账号下操作。
+注意：为防止误操作，本节命令皆为在普通账号下操作。
  
  #### 所需安装软件
  
  > doas pkg_add gdm  # gdm 为登录管理器
  
- > doas pkg_add gnome-session gnome-terminal nautilus metacity gnome-panel # Gnome 桌面所需软件，后续可继续添加
+ > doas pkg_add gnome-session gnome-terminal nautilus metacity gnome-panel # Gnome 桌面所需软件
  
- > doas pkg_add firefox chromium thunderbird vlc audacity bash redshift neofetch # 部分软件，以后可酌量添加
- 
+
  #### 配置文件 
  
  > cd ~
@@ -107,7 +121,6 @@
  > vim .xinitrc ，添加 `exec gnome-session`
  
  > doas vim /root/.xinitrc ，添加 `exec gmome-session`
- 
  
  > doas vim /etc/rc.conf.local ，修改内容为：
  
@@ -168,6 +181,8 @@ export GTK_IM_MODULE=XIM
  
  ### 2 图标安装
  
+ > doas pkg_add sudo wget
+ 
  > git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
  
  > cd papirus-icon-theme
@@ -176,13 +191,13 @@ export GTK_IM_MODULE=XIM
  
  ### 3 主题安装
  
- > bash
+ > doas pkg_add bash
 
  >git clone https://github.com/vinceliuice/Qogir-theme
 
  > cd Qogir-theme
 
- > vim install.sh ，更改第一行(shebang)，将`#!/bin/bash`修改为`#!/usr/local/bin/bash`，而后保存
+ > bash
 
  > ./install.sh
  
@@ -219,6 +234,10 @@ export GTK_IM_MODULE=XIM
  > doas umount /home/$User/media/first
  
  ## 七 无线测试
+
+我的笔记本无线为 rtl8188cu ，驱动为 `rtwn0`，为了可以自动识别无线，可以作以下操作：
+
+> doas vim /etc/hostname/rtwn0 ，而后添加 ：`join 无线名称 wpakey 无线密码`，保存后即可。
  
  ## 八 显卡驱动
  
