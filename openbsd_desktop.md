@@ -22,7 +22,7 @@
 
 > doas vim /etc/installurl
 
-注释掉默认源，改为国内源 `https://mirrors.tuna.tsinghua.edu.cn/OpenBSD`[^2]，保存后退出。
+注释掉默认源，改为国内源 `https://mirrors.aliyun.com/openbsd`[^2]，保存后退出。
 
 ### 内核更新
 
@@ -242,7 +242,7 @@ export GTK_IM_MODULE=XIM
  ## 八 显卡驱动
  
  ## 九 补遗
- 
+ https://mirrors.aliyun.com/openbsd
  ### ffmpeg 录屏
  
  > ffmpeg -f x11grab -s 1600x900 -i :0 -preset ultrafast -crf 10 screen.mp4 
@@ -277,7 +277,7 @@ export GTK_IM_MODULE=XIM
  
  > visudo ，然后添加一行 `$USER ALL=(ALL) SETENV: ALL` （请将 $USER 替换为你的用户名)，保存后退出。
  
-[^2]: 此处选择了清华镜像源，也可选择`北京外国语大学镜像源`(https://mirrors.bfsu.edu.cn/OpenBSD/)、`华为镜像源`(https://mirrors.huaweicloud.com/OpenBSD) 。
+[^2]: 此处选择了阿里云镜像源。可选择清华镜像源 `https://mirrors.tuna.tsinghua.edu.cn/OpenBSD` 、`北京外国语大学镜像源`(https://mirrors.bfsu.edu.cn/OpenBSD/)、`华为镜像源`(https://mirrors.huaweicloud.com/OpenBSD) 。
 
 [^3]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
 
