@@ -10,35 +10,37 @@
 
 > su
 
-> vi /etc/doas.conf, 添加`permit :wheel`后保存。
+> pkg_add sudo 
+ 
+> visudo ，然后添加一行 `$USER ALL=(ALL) SETENV: ALL` （请将 $USER 替换为你的用户名)，保存后退出。
 
 ### 2 获取 vim
 
-> doas pkg_add vim #出现多个选项，如果想在未来使用 Gvim，可以选择 vim-gtk3
+> sudo pkg_add vim #出现多个选项，如果想在未来使用 Gvim，可以选择 vim-gtk3
 
 ### 3 更新
 
 ### 更新源地址
 
-> doas vim /etc/installurl
+> sudo vim /etc/installurl
 
 注释掉默认源，改为国内源 `https://mirrors.aliyun.com/openbsd`[^2]，保存后退出。
 
 ### 内核更新
 
-> doas syspatch
+> sudo syspatch
 
 ### 驱动更新
 
-> doas fw_update
+> sudo fw_update
 
 ### 软件升级
 
-> doas pkg_add -u
+> sudo pkg_add -u
 
 ### 修改默认shell
 
-> doas chsh
+> sudo chsh
  
 ### 4 安装桌面和登录管理器
  
@@ -48,9 +50,9 @@
  
 #### 所需安装软件
  
-> doas pkg_add slim  [^3]
+> sudo pkg_add slim  [^3]
  
-> doas pkg_add mate mate-utils mate-extras # Mate桌面所需软件
+> sudo pkg_add mate mate-utils mate-extras # Mate桌面所需软件
  
 #### 配置文件 
  
@@ -59,9 +61,9 @@
  
 > vim .xinitrc ，添加 `exec mate-session`
  
-> doas vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`。
+> sudo vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`。
 
-> doas vim /etc/rc.conf.local ，添加
+> sudo vim /etc/rc.conf.local ，添加
  
 ```
  xdm_flags=NO
@@ -78,9 +80,9 @@
  
 #### 所需安装软件
  
-> doas pkg_add slim  # slim 为登录管理器
+> sudo pkg_add slim  # slim 为登录管理器
  
-> doas pkg_add xfce  # Xfce 桌面所需软件
+> sudo pkg_add xfce  # Xfce 桌面所需软件
  
 #### 配置文件 
    
@@ -88,11 +90,11 @@
  
 > vim .xinitrc ，添加 `exec startxfce4`
  
-> doas vim /root/.xinitrc ，添加 `exec startxfce4`
+> sudo vim /root/.xinitrc ，添加 `exec startxfce4`
  
-> doas vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`
+> sudo vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`
  
-> doas vim /etc/rc.conf.local ，添加
+> sudo vim /etc/rc.conf.local ，添加
  
 ```
  xdm_flags=NO
@@ -109,9 +111,9 @@
  
  #### 所需安装软件
  
- > doas pkg_add gdm  # gdm 为登录管理器
+ > sudo pkg_add gdm  # gdm 为登录管理器
  
- > doas pkg_add gnome-session gnome-terminal nautilus metacity gnome-panel # Gnome 桌面所需软件
+ > sudo pkg_add gnome-session gnome-terminal nautilus metacity gnome-panel # Gnome 桌面所需软件
  
 
  #### 配置文件 
@@ -120,9 +122,9 @@
  
  > vim .xinitrc ，添加 `exec gnome-session`
  
- > doas vim /root/.xinitrc ，添加 `exec gmome-session`
+ > sudo vim /root/.xinitrc ，添加 `exec gmome-session`
  
- > doas vim /etc/rc.conf.local ，修改内容为：
+ > sudo vim /etc/rc.conf.local ，修改内容为：
  
  ```
  xdm_flags=NO #xdm 为 openbsd 默认启动器，屏蔽替换为 gdm
@@ -146,11 +148,11 @@
  
  ### 1 安装字体
  
- > doas pkg_add noto-cjk noto-emoji
+ > sudo pkg_add noto-cjk noto-emoji
  
  ### 2 安装输入法
  
- > doas pkg_add fcitx[^4] zh-libpinyin[^5]
+ > sudo pkg_add fcitx[^4] zh-libpinyin[^5]
  
  ### 3 设置中文
  
@@ -177,11 +179,11 @@ export GTK_IM_MODULE=XIM
  
  ### 1 提前准备
  
- > doas pkg_add git bash
+ > sudo pkg_add git bash
  
  ### 2 图标安装
  
- > doas pkg_add sudo wget
+ > sudo pkg_add sudo wget
  
  > git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
  
@@ -191,10 +193,10 @@ export GTK_IM_MODULE=XIM
  
  ### 3 主题安装
  
- > doas pkg_add bash
+ > sudo pkg_add bash
 
  >git clone https://github.com/vinceliuice/Qogir-theme
-
+ 
  > cd Qogir-theme
 
  > bash
@@ -215,34 +217,34 @@ export GTK_IM_MODULE=XIM
  
  ### 挂载`fat32`格式的 U 盘 
  
- > doas mount /dev/sd3i /home/$USER/media/first
+ > sudo mount /dev/sd3i /home/$USER/media/first
  
  ### 挂载`NTFS`格式的 U 盘 
  
- > doas mount /dev/sd2k /home/$USER/media/second
+ > sudo mount /dev/sd2k /home/$USER/media/second
   
  ### 挂载`ext2/ext3`格式的 U 盘 
  
-  > doas mount /dev/sd1l /home/$USER/media/third
+  > sudo mount /dev/sd1l /home/$USER/media/third
   
  ### 挂载`CD`磁盘 
  
-  > doas mount /dev/cd0a /home/$USER/media/forth
+  > sudo mount /dev/cd0a /home/$USER/media/forth
   
  ### 卸载磁盘
  
- > doas umount /home/$User/media/first
+ > sudo umount /home/$User/media/first
  
  ## 七 无线测试
 
 我的笔记本无线为 rtl8188cu ，驱动为 `rtwn0`，为了可以自动识别无线，可以作以下操作：
 
-> doas vim /etc/hostname/rtwn0 ，而后添加 ：`join 无线名称 wpakey 无线密码`，保存后即可。
+> sudo vim /etc/hostname/rtwn0 ，而后添加 ：`join 无线名称 wpakey 无线密码`，保存后即可。
  
  ## 八 显卡驱动
  
  ## 九 补遗
- https://mirrors.aliyun.com/openbsd
+
  ### ffmpeg 录屏
  
  > ffmpeg -f x11grab -s 1600x900 -i :0 -preset ultrafast -crf 10 screen.mp4 
@@ -271,13 +273,13 @@ export GTK_IM_MODULE=XIM
  答：打开 /etc/rc.local ，添加  sysctl hw.smt=1 。
  ```
  
- [^1] 对于熟悉 Linux 的用户，可尝试安装 sudo ：
+ [^1] 也可尝试安装 `doas`：
  
- > pkg_add sudo 
+ > pkg_add doas
  
- > visudo ，然后添加一行 `$USER ALL=(ALL) SETENV: ALL` （请将 $USER 替换为你的用户名)，保存后退出。
+ > vi /etc/doas.conf, 添加`permit :wheel`后保存。
  
-[^2]: 此处选择了阿里云镜像源。可选择清华镜像源 `https://mirrors.tuna.tsinghua.edu.cn/OpenBSD` 、`北京外国语大学镜像源`(https://mirrors.bfsu.edu.cn/OpenBSD/)、`华为镜像源`(https://mirrors.huaweicloud.com/OpenBSD) 。
+[^2]: 此处选择了阿里云镜像源。可选择`清华镜像源` https://mirrors.tuna.tsinghua.edu.cn/OpenBSD 、`北京外国语大学镜像源`(https://mirrors.bfsu.edu.cn/OpenBSD/)、`华为镜像源`(https://mirrors.huaweicloud.com/OpenBSD) 。
 
 [^3]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
 
