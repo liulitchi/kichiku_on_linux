@@ -239,7 +239,7 @@ export GTK_IM_MODULE=XIM
 
 我的笔记本无线为 rtl8188cu ，驱动为 `rtwn0`，为了可以自动识别无线，可以作以下操作：
 
-> sudo vim /etc/hostname/rtwn0 ，而后添加 ：`join 无线名称 wpakey 无线密码`，保存后即可。
+> sudo vim /etc/hostname.rtwn0 ，而后添加 ：`join 无线名称 wpakey 无线密码`，保存后即可。
  
  ## 八 显卡驱动
  
