@@ -101,7 +101,7 @@
  sshd_flags=NO
  pkg_scripts="dbus_daemon avahi_daemon"
  dbus_enable=YES
- multicast_host=NO
+ multicast_host=YES
 ```
 重启电脑即可进入桌面。
 
@@ -132,7 +132,7 @@
  gdm_enable=YES
  pkg_scripts="messagebus dbus_daemon avahi_daemon gdm"
  sshd_flags=NO       #ssh设置，需要时可开启
- multicast_host=NO
+ multicast_host=YES
 ```
  重启电脑即可进入桌面。
  
@@ -239,7 +239,7 @@ export GTK_IM_MODULE=XIM
 
 我的笔记本无线为 rtl8188cu ，驱动为 `rtwn0`，为了可以自动识别无线，可以作以下操作：
 
-> sudo vim /etc/hostname.rtwn0 ，而后添加 ：`join 无线名称 wpakey 无线密码`，保存后即可。
+> sudo vim /etc/hostname.rtwn0 ，而后添加 ：` dhcp` `nwid '无线名称' wpakey '无线密码'`，保存后即可。
  
  ## 八 显卡驱动
  
@@ -279,7 +279,7 @@ export GTK_IM_MODULE=XIM
  
  > vi /etc/doas.conf, 添加`permit :wheel`后保存。
  
-[^2]: 此处选择了阿里云镜像源。可选择`清华镜像源` https://mirrors.tuna.tsinghua.edu.cn/OpenBSD 、`北京外国语大学镜像源`(https://mirrors.bfsu.edu.cn/OpenBSD/)、`华为镜像源`(https://mirrors.huaweicloud.com/OpenBSD) 。
+[^2]: 此处选择了阿里云镜像源。可选择`清华镜像源` https://mirrors.tuna.tsinghua.edu.cn/OpenBSD 、`北京外国语大学镜像源`(https://mirrors.bfsu.edu.cn/OpenBSD/)、`华为镜像源` (https://mirrors.huaweicloud.com/OpenBSD) 。
 
 [^3]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
 
