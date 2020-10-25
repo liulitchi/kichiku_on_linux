@@ -72,7 +72,7 @@
  sshd_flags=NO
  pkg_scripts="dbus_daemon avahi_daemon"
  dbus_enable=YES
- multicast_host=NO
+ multicast_host=YES
 ```
 重启电脑即可进入桌面。
  
@@ -91,8 +91,6 @@
 > cd ~ 
  
 > vim .xinitrc ，添加 `exec startxfce4`
- 
-> sudo vim /root/.xinitrc ，添加 `exec startxfce4`
  
 > sudo vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`
  
