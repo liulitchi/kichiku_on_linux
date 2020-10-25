@@ -40,7 +40,9 @@
 
 ### 修改默认shell
 
-> sudo chsh
+> sudo chsh // sudo chsh -s /usr/local/bin/bash 用户名
+
+
  
 ### 4 安装桌面和登录管理器
  
