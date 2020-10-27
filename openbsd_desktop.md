@@ -205,7 +205,7 @@ export GTK_IM_MODULE=XIM
  
  ## 六 挂载可移动磁盘
  
- 使用`dmesg`命令来查看新插入的盘符，如格式为fat32的U盘，可能在openbsd系统里盘符为sd3，则按习惯命名为`sd3i`。
+ ### 新建挂载点
  
  > cd ~
  
@@ -215,25 +215,46 @@ export GTK_IM_MODULE=XIM
  
  > mkdir first second third forth
  
- ### 挂载`fat32`格式的 U 盘 
+ ### 查看盘符
  
- > sudo mount /dev/sd3i /home/$USER/media/first
+ 使用`dmesg`命令来查看新插入的盘符， 如格式为fat32的U盘，可能在openbsd系统里盘符为 sd1 。
  
- ### 挂载`NTFS`格式的 U 盘 
+ ### 检查分区
  
- > sudo mount /dev/sd2k /home/$USER/media/second
+ 如插入的盘符为`sd1`，则输入 `sudo disklabel sd1` 查看分区情况。如下
+ 
+ ```
+ #                size           offset  fstype [fsize bsize   cpg]
+  c:         60062500                0  unused                    
+  i:         60062244              256   MSDOS    
+ ```
+ ### 挂载
+ 
+ 由上则可知分区为 i ，使用以下命令挂载：
+ 
+ > sudo mount /dev/sd1i /$USER/media/first
+ 
+ 
+ 
+ ### 其它格式
+ 
+ OpenBSD 可挂载的外接硬盘格式有 `NTFS`、`ext2/ext3`以及`CD磁盘`等，具体命令可参考如下：
+
+ 
+ > sudo mount /dev/sd3i /$USER/media/first   # fat32
+ 
+ 
+ > sudo mount /dev/sd2k /$USER/media/second  # ntfs
   
- ### 挂载`ext2/ext3`格式的 U 盘 
  
-  > sudo mount /dev/sd1l /home/$USER/media/third
-  
- ### 挂载`CD`磁盘 
+ > sudo mount /dev/sd1l /$USER/media/third  # ext2/ext3
  
-  > sudo mount /dev/cd0a /home/$USER/media/forth
+ > sudo mount /dev/cd0a /$USER/media/forth  # CD
+ 
   
  ### 卸载磁盘
  
- > sudo umount /home/$User/media/first
+ > sudo umount /$User/media/first
  
  ## 七 无线测试
 
