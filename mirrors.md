@@ -24,5 +24,5 @@
 
 
 
-<a name="pkgsrc">1</a>: https://mirrors.bfsu.edu.cn/pkgsrc/packages/NetBSD/amd64/9.1/All/ 
+<a name="pkgsrc">1</a>: 例如： https://mirrors.bfsu.edu.cn/pkgsrc/packages/NetBSD/amd64/9.1/All/ 
  
