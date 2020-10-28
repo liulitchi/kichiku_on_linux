@@ -25,4 +25,4 @@
 
 
 
-[^1]: 例如：https://mirrors.bfsu.edu.cn/pkgsrc/packages/NetBSD/amd64/9.1/All/
+[^1]: 例如：https://mirrors.bfsu.edu.cn/pkgsrc/packages/NetBSD/amd64/9.1/All/  
