@@ -2,6 +2,13 @@
 
   20-10-28 updated
 
+### 系统
+
+#### FreeBSD
+
+
+
+### 软件
 |        | Debian | FreeBSD | OpenBSD | NetBSD |
 | :-----:|:-----: | :-----: | :-----: | :-----: |
 | [中国科学技术大学](https://mirrors.ustc.edu.cn)     | 镜像/软件包  | 镜像/软件包 |  X         |  X        |
