@@ -1,5 +1,9 @@
 ## 一 安装 OpenBSD
 
+### 下载镜像
+
+进入[链接](https://mirrors.tuna.tsinghua.edu.cn/OpenBSD/6.8/amd64/)，下载 installXX.img ，然后刻录镜像。
+
 待写
 
 ## 二 安装桌面
