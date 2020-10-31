@@ -156,7 +156,7 @@
  
  ### 2 安装输入法
  
- > sudo pkg_add fcitx[^4] zh-libpinyin[^5]
+ > sudo pkg_add fcitx fcitx-configtool zh-libpinyin[^4]
  
  ### 3 设置中文
  
@@ -308,6 +308,5 @@ export GTK_IM_MODULE=XIM
 
 [^3]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
 
-[^4]: OpenBSD 二进制包暂未包含`fcitx`配置文件包。
 
-[^5]: 虽然有 `fcitxi-pinyin` 可选，但此处建议改为更易用的 `zh-libpinyin`
+[^4]: 虽然有 `fcitxi-pinyin` 可选，但此处建议改为更易用的 `zh-libpinyin`
