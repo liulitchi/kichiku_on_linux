@@ -74,20 +74,17 @@ autologin-user=你的用户名
 > vim .vimrc
 
 ```
-" gvim 字体大小
-set guifont=Monospace\ 20
+set guifont=Monospace\ 20   " gvim 字体大小
 
-" 语法高亮
-syntax on
+syntax on                   " 语法高亮
 
-" 搜索高亮
-set hlsearch
+set hlsearch                " 搜索高亮
 
-" Tab 空格长度
-set tabstop=4
+set tabstop=4               " Tab 空格长度
 
-" 自动缩进
-set autoindent
+set autoindent              " 自动缩进
+
+colorscheme desert          " 背景主题
 ```
 
 ## 添加路径（两种方式）
