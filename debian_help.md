@@ -140,3 +140,7 @@ or
 > sudo sysctl kernel.unprivileged_userns_clone=1
 
 [from](https://github.com/electron/electron/issues/17972)
+
+
+- [ ] 未完成
+- [X] 已完成
