@@ -292,8 +292,8 @@ export GTK_IM_MODULE=XIM
  答：打开 /etc/rc.local ，添加  sysctl hw.smt=1 。
  ```
  
-[^2]: 此处选择了阿里云镜像源。可选择`清华镜像源` https://mirrors.tuna.tsinghua.edu.cn/OpenBSD 、    
- `北京外国语大学镜像源`(https://mirrors.bfsu.edu.cn/OpenBSD)。
+[^2]: 此处选择了阿里云镜像源。可选择`清华镜像源`(https://mirrors.tuna.tsinghua.edu.cn/OpenBSD) 、    
+ `北京外国语大学镜像源`(https://mirrors.bfsu.edu.cn/OpenBSD) 。
 
 [^3]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
 
