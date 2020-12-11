@@ -10,7 +10,7 @@
 
 系统安装完成后重启,OpenBSD 会自动检测无线、显卡和声卡并下载驱动，简直业界良心。虽然源地址在国外，但是速度并没有想象中缓慢，静等几分钟，待其自行更新。
 
-### 1 获取权限[^1]
+### 1 获取权限
 
 > su
 
@@ -183,27 +183,21 @@ export GTK_IM_MODULE=XIM
  
  ### 1 提前准备
  
- > sudo pkg_add git bash
+ > sudo pkg_add git bash wget
  
  ### 2 图标安装
  
- > sudo pkg_add sudo wget
+ > git clone https://github.com/vinceliuice/Qogir-icon-theme
  
- > git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
- 
- > cd papirus-icon-theme
+ > cd Qogir-icon-theme
  
  > ./install.sh
  
  ### 3 主题安装
- 
- > sudo pkg_add bash
 
- >git clone https://github.com/vinceliuice/Qogir-theme
+ > git clone https://github.com/vinceliuice/Qogir-theme
  
  > cd Qogir-theme
-
- > bash
 
  > ./install.sh
  
@@ -221,7 +215,7 @@ export GTK_IM_MODULE=XIM
  
  ### 查看盘符
  
- 使用`dmesg`命令来查看新插入的盘符， 如格式为fat32的U盘，可能在openbsd系统里盘符为 sd1 。
+ 使用`dmesg`命令来查看新插入的盘符，如格式为fat32的U盘，可能在openbsd系统里盘符为 sd1 。
  
  ### 检查分区
  
@@ -243,13 +237,10 @@ export GTK_IM_MODULE=XIM
  ### 其它格式
  
  OpenBSD 可挂载的外接硬盘格式有 `NTFS`、`ext2/ext3`以及`CD磁盘`等，具体命令可参考如下：
-
  
  > sudo mount /dev/sd3i /$USER/media/first   # fat32
  
- 
  > sudo mount /dev/sd2k /$USER/media/second  # ntfs
-  
  
  > sudo mount /dev/sd1l /$USER/media/third  # ext2/ext3
  
@@ -275,12 +266,12 @@ export GTK_IM_MODULE=XIM
  > ffmpeg -f x11grab -s 1600x900 -i :0 -preset ultrafast -crf 10 screen.mp4 
  
    crf在wiki中是质量，0最好，是无损，51是最差
+ 
  ### 参考书籍
  
  - Absolute OpenBSD
  
  - OpenBSD FAQ
- 
  
  ### 技巧问答
  
@@ -301,15 +292,9 @@ export GTK_IM_MODULE=XIM
  答：打开 /etc/rc.local ，添加  sysctl hw.smt=1 。
  ```
  
- [^1] 也可尝试安装 `doas`：
- 
- > pkg_add doas
- 
- > vi /etc/doas.conf, 添加`permit :wheel`后保存。
- 
-[^2]: 此处选择了阿里云镜像源。可选择`清华镜像源` https://mirrors.tuna.tsinghua.edu.cn/OpenBSD 、`北京外国语大学镜像源`(https://mirrors.bfsu.edu.cn/OpenBSD)、`华为镜像源`(https://mirrors.huaweicloud.com/OpenBSD) 。
+[^2]: 此处选择了阿里云镜像源。可选择`清华镜像源` https://mirrors.tuna.tsinghua.edu.cn/OpenBSD 、    
+ `北京外国语大学镜像源`(https://mirrors.bfsu.edu.cn/OpenBSD)。
 
 [^3]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
-
 
 [^4]: 虽然有 `fcitxi-pinyin` 可选，但此处建议改为更易用的 `zh-libpinyin`
