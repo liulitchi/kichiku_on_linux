@@ -297,4 +297,4 @@ export GTK_IM_MODULE=XIM
 
 [^3]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
 
-[^4]: 虽然有 `fcitxi-pinyin` 可选，但此处建议改为更易用的 `zh-libpinyin`
+[^4]: 虽然有 `fcitx-pinyin` 可选，但此处建议改为更易用的 `zh-libpinyin`
