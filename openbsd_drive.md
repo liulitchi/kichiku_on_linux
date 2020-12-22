@@ -6,7 +6,7 @@
 |ath|	Atheros IEEE 802.11a/b/g wireless network device with GPIO|
 |athn|	Atheros IEEE 802.11a/b/g/n wireless network device|
 |atu	|Atmel AT76C50x USB IEEE 802.11b wireless network device|
-|atw	ADMtek ADM8211 IEEE 802.11b wireless network device|
+|atw	|ADMtek ADM8211 IEEE 802.11b wireless network device|
 |bwfm|	Broadcom and Cypress IEEE 802.11a/ac/b/g/n wireless network device|
 |bwi	|Broadcom AirForce IEEE 802.11b/g wireless network device|
 |ipw	|Intel PRO/Wireless 2100 IEEE 802.11b wireless network device|
