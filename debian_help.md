@@ -85,6 +85,8 @@ set tabstop=4               " Tab 空格长度
 set autoindent              " 自动缩进
 
 colorscheme desert          " 背景主题
+
+set nu                      " 显示行号
 ```
 
 ## 添加路径（两种方式）
