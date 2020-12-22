@@ -260,6 +260,18 @@ export GTK_IM_MODULE=XIM
  ## 八 显卡驱动
  
  ## 九 补遗
+ 
+### 设置 Shell 中的变量 PS1
+
+    vim ~/.profile
+
+    PS1="[\u@\h \W]$"
+
+### 普通用户关机权限
+
+    visudo
+
+取消最后一行shutdown的注释
 
  ### ffmpeg 录屏
  
