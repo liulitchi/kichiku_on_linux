@@ -1,3 +1,22 @@
+## GC
+
+## 
+| firmware | chipest |
+|:--------:|:-------:|
+| rtwn   | Realtek RTL8188CE, RTL8188EE, RTL8192CE and RTL8723AE |
+| ral    | Ralink RT2500, RT2501, RT2600, RT2700, RT2800, RT3090 and RT3900E |
+| rum    | Ralink RT2501USB and RT2601USB |
+| run    | Ralink RT2700U, RT2800U, RT3000U and RT3900E |
+
+
+
+
+
+
+
+
+
+
 ### Wireless Drive List
 |Driver	|Chipset|
 |:-----:|:-----:|
