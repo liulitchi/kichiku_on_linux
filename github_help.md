@@ -54,4 +54,12 @@
  > git remote rm origin
 
  > git remote add origin git@github.com:someuser/newprojectname.git
+ 
+ ## 版本回退
+ 
+ `git log` 查看版本号
+ 
+ `git reset --hard abcdefg` 回退对应版本
+ 
+ `git push -f` 提交更改
 
