@@ -121,9 +121,10 @@ export QT_IM_MODULE=fcitx
 ### 输入法配置
 
 安装好 fcitx 后，使用 Configure来配置，可以保留汉语和英语两种输入法，如 pinyin(LibPinYin)和Keyboard - English(US)。默认 Ctrl + 空格切换。
-无线模块
 
-### 查看无线硬件型号： `> pciconf -lv`
+### 无线模块
+
+查看无线硬件型号： `> pciconf -lv`
 
 以我的笔记本为例，无线型号为 RTL8188CU 。查阅手册发现，开启 rtwn 模块即可开启无线，步骤如下（其它无线模块大同小异）：
 
@@ -136,12 +137,14 @@ if_rtwn_pci_load="YES"
 legal.realtek.license_ack=1
 ```
 打开 `/etc/rc.conf`，添加以下内容
+
 ```
 wlans_rtwn0="wlan0"
-
 ifconfig_wlan0="WPA DHCP" 
 ```
+
 `vim /etc/wpa_suppplicant.conf`，添加：
+
 ```
 network={
     ssid="无线名称"
@@ -162,22 +165,20 @@ chsh 用户名，然后编辑文件即可, 如 sh 一栏改为 /usr/csh or /usr/
 终端(csh)配置输入法
 
 在 .cshrc 和 /etc/csh.cshrc 中添加如下：
+
 ```
 setenv XMODIFIERS @im=fcitx
-
 setenv GTK_IM_MODULE fcitx
-
 setenv GTK2_IM_MODULE fcitx
-
 setenv GTK3_IM_MODULE fcitx
-
 setenv QT_IM_MODULE fcitx
-
 setenv QT4_IM_MODULE fcitx
 ```
+
 ### 设置终端识别和输入中文
 
 在 .cshrc 和 /etc/csh.cshrc 中添加两行：
+
 ```
 setenv LANG en_US.UTF-8
 setenv MM_CHARSET en_US.UTF-8
