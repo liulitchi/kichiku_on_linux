@@ -25,9 +25,8 @@ FreeBSD: {
 
 保存文本后，就可以开始更新源了
 ```
-    pkg update
-
-    pkg upgrade
+pkg update
+pkg upgrade
 ```
 安装必要软件： sudo 和 vim
 
@@ -106,7 +105,7 @@ drm-kmod 为从 linux 移植的 intel/amd 显卡驱动,安装完成后需要手�
 
 - 软件包管理器：`octopkg`
 
-- dock 栏：`papirus-icon-theme`
+- 图标：`papirus-icon-theme`
 
 ### 中文输入法： 
 
