@@ -108,7 +108,9 @@ drm-kmod 为从 linux 移植的 intel/amd 显卡驱动,安装完成后需要手�
 
 - dock 栏：`papirus-icon-theme`
 
-### 中文输入法： `pkg install zh-fcitx zh-fcitx-libpinyin zh-fcitx-configtool`
+### 中文输入法： 
+
+`pkg install zh-fcitx zh-fcitx-libpinyin zh-fcitx-configtool`
 
 根据安装后的提示，执行 vim .xinitrc，添加以下内容
 ```
@@ -195,7 +197,7 @@ fusfefs-lkl : 将 linux 内核变为库文件，支持读写 BTFRS, XFS, EXT3, E
 
 ## 第三部分
 
-###使用技巧
+### 使用技巧
 
 - 显示硬件： `vim /var/run/dmesg.boot`
 
@@ -206,6 +208,7 @@ fusfefs-lkl : 将 linux 内核变为库文件，支持读写 BTFRS, XFS, EXT3, E
 vscode linux-fdisk ddrescue redshift plank unrar you-get( pip版本较新) linux-sublime3 linuxqq
 
 ### neofetch --off 输出
+
 ```
 OS: FreeBSD 12.1-RELEASE amd64 
 Uptime: 25 mins 
@@ -223,6 +226,7 @@ CPU: Intel i5-2540M (4) @ 2.594GHz
 GPU: 2nd Generation Core Processor Family Integrated Graphics Controller 
 Memory: 2487MiB / 7705MiB 
 ```
+
 ### 测试安装 Linux 兼容软件
 
 `sudo pkg install linux_base-c7`
