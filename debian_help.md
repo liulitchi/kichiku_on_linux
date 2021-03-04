@@ -65,9 +65,7 @@ autologin-user=你的用户名
 
 ## debian 无法启动 virtualbox
 
-> sudo apt install virtualbox-dkms
-
-> sudo modprobe vboxdrv
+添加内河对应头文件(headers)
 
 ## vim 配置
 
@@ -116,14 +114,23 @@ or
 
     重启系统： sudo reboot
 
-## ffmpeg 录屏
+## [ffmpeg 录屏](https://trac.ffmpeg.org/wiki/Capture/Desktop)
 
 
->  微损 ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac screen.mp4
+- Use the x11grab device:
 
-or
+`ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 output.mp4`
 
->  无损 ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -c:v ffvhuff screen.mkv
+This will grab the image from desktop, starting with the upper-left corner at x=100, y=200 with a width and height of 1024⨉768.
+
+- If you need audio too, you can use ALSA (see Capture/ALSA for more info):
+
+`ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f alsa -ac 2 -i hw:0 output.mkv`
+
+- Or the pulse input device (see Capture/PulseAudio for more info):
+
+`ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f pulse -ac 2 -i default output.mkv`
+
 
 ## 安装谷歌地球
 
