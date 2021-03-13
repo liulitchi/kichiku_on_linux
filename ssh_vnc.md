@@ -1,4 +1,6 @@
-armbiam config: `sudo armbian-config`
+[armbian 中科大镜像下载](https://mirrors.ustc.edu.cn/armbian-dl/)
+
+armbiam 配置: `sudo armbian-config`
 
 ## SSH 设置
 
@@ -13,8 +15,8 @@ armbiam config: `sudo armbian-config`
 
 ## VNC 设置
 
-Kill VNC：
+杀死 VNC 进程：
 ```
-vnc list: ps -ef|grep vnc
+ps -ef|grep vnc
 vncserver -kill :1
 ```
