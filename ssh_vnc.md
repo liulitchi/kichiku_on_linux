@@ -6,7 +6,7 @@ armbiam 配置: `sudo armbian-config`
 
 ### 
 
-局域网IP端口扫描： `nmap -sP 192.168.x.y/24`
+局域网IP端口扫描： `nmap -sS 192.168.x.y/24`
 
 获取主机IP地址：`cat /proc/net/arp`
 
