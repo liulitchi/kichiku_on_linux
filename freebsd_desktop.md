@@ -90,15 +90,15 @@ hald_enable="YES"
 
 ### 显卡驱动
 
-`sudo pkg install drm-kmod`
+`sudo pkg install drm-fbsd13-kmod`
 
 drm-kmod 为从 linux 移植的 intel/amd 显卡驱动,安装完成后需要手动添加。打开 `/etc/rc.conf` ，如下:
 
-- 如果为 intel 核心显卡，添加 kld_list="/boot/modules/i915kms.ko"。
+- 如果为 intel 核心显卡，添加 kld_list="i915kms"。
 
-- 如果为 HD7000 以后的 AMD 显卡，添加kld_list="/boot/modules/amdgpu.ko"。
+- 如果为 HD7000 以后的 AMD 显卡，添加kld_list="amdgpu"。
 
-- 如果为 HD7000 以前的 AMD 显卡，添加kld_list="/boot/modules/radeonkms.ko"。
+- 如果为 HD7000 以前的 AMD 显卡，添加kld_list="radeonkms"。
 
 ### 视频硬解
 
@@ -213,25 +213,7 @@ fusfefs-lkl : 将 linux 内核变为库文件，支持读写 BTFRS, XFS, EXT3, E
 
 vscode linux-fdisk ddrescue redshift plank unrar you-get( pip版本较新) linux-sublime3 linuxqq
 
-### neofetch --off 输出
 
-```
-OS: FreeBSD 12.1-RELEASE amd64 
-Uptime: 25 mins 
-Packages: 586 (pkg) 
-Shell: bash 5.0.16 
-Resolution: 1366x768 
-DE: MATE 
-WM: Metacity (Marco) 
-WM Theme: Menta 
-Theme: Menta [GTK2/3] 
-Icons: Papirus [GTK2/3] 
-Terminal: mate-terminal 
-Terminal Font: Monospace 10 
-CPU: Intel i5-2540M (4) @ 2.594GHz 
-GPU: 2nd Generation Core Processor Family Integrated Graphics Controller 
-Memory: 2487MiB / 7705MiB 
-```
 
 ### 测试安装 Linux 兼容软件
 
@@ -271,4 +253,3 @@ Memory: 2487MiB / 7705MiB
 
 然后就可成功开启，测试 reaper 6.0.8 成功运行
 
-### WPS for Linux
