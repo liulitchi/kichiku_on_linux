@@ -1,16 +1,14 @@
 ## 第一部分
 
-FreeBSD 12.1-release 安装完成后，默认界面是黑黢黢的终端。我们试着安装 Mate 桌面。
+FreeBSD 13-release 安装完成后，默认界面是黑黢黢的终端。我们试着安装 Mate 桌面。
 
 第一步，改源。
 
 先用root账号登录系统。FreeBSD 12.1 默认安装了 vi 和 ee 两个文本阅读器，选择一个适合的
 
-`vi /etc/pkg/FreeBSD.conf`
 
-将文本内 enable 后的 yes 改为 no。这一步是禁止官方源。
 
-然后新建源文本:
+新建源文本:
 
 `mkdir -p /usr/local/etc/pkg/repos/ #新建文件夹`
 
@@ -18,10 +16,19 @@ FreeBSD 12.1-release 安装完成后，默认界面是黑黢黢的终端。我�
 
 打开后，添加以下内容：
 ```
-FreeBSD: {
-  url: "pkg+http://mirrors.ustc.edu.cn/freebsd-pkg/${ABI}/quarterly",
- }
+ustc:{
+　　url: "pkg+http://mirrors.ustc.edu.cn/freebsd-pkg/${ABI}/quarterly", 
+　　mirror_type: "srv",
+　　signature_type: "none",
+　　fingerprints: "/usr/share/keys/pkg",
+　　enabled: yes
+}
 ```
+
+禁用系统级 pkg 源：
+
+ > mv /etc/pkg/FreeBSD.conf /etc/pkg/FreeBSD.conf.back
+
 
 保存文本后，就可以开始更新源了
 ```
@@ -105,7 +112,6 @@ drm-kmod 为从 linux 移植的 intel/amd 显卡驱动,安装完成后需要手�
 
 - 软件包管理器：`octopkg`
 
-- 图标：`papirus-icon-theme`
 
 ### 中文输入法： 
 
