@@ -102,21 +102,39 @@ drm-xxx-kmod 为从 linux 移植的 intel/amd 显卡驱动,安装完成后需要
 
 - 软件包管理器：`octopkg`
 
+### 修改 sh
+
+chsh 用户名，然后编辑文件即可, 如 sh 一栏改为 /usr/csh。建议默认设置为 csh 。
+
+
+### 中文界面
+
+在 .cshrc 中添加两行：
+
+```
+setenv LANG zh_CN.UTF-8
+setenv MM_CHARSET zh_CN.UTF-8
+```
+
 
 ### 中文输入法： 
 
 `pkg install zh-fcitx zh-fcitx-libpinyin zh-fcitx-configtool`
 
-根据安装后的提示，执行 vim .xinitrc，添加以下内容
+在 .cshrc 中添加如下
+
 ```
-export XMODIFIERS='@im=fcitx'
-export GTK_IM_MODULE=fcitx
-export GTK3_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
+setenv QT4_IM_MODULE fcitx
+setenv GTK_IM_MODULE fcitx
+setenv QT_IM_MODULE fcitx
+setenv GTK2_IM_MODULE fcitx
+setenv GTK3_IM_MODULE fcitx
+setenv XMODIFIERS @im=fcitx
 ```
-### 输入法配置
+输入法配置
 
 安装好 fcitx 后，使用 Configure来配置，可以保留汉语和英语两种输入法，如 pinyin(LibPinYin)和Keyboard - English(US)。默认 Ctrl + 空格切换。
+
 
 ### 无线模块
 
@@ -151,19 +169,7 @@ network={
 
 `sudo ifconfig wlan0 up`
 
-### 修改 sh
 
-chsh 用户名，然后编辑文件即可, 如 sh 一栏改为 /usr/csh。建议默认设置为 csh 。
-
-
-### 设置中文界面
-
-在 .cshrc 中添加两行：
-
-```
-setenv LANG zh_CN.UTF-8
-setenv MM_CHARSET zh_CN.UTF-8
-```
 
 ### 自动挂载U盘
 
