@@ -1,8 +1,10 @@
+
+
 ## 第一部分
 
-FreeBSD 13-release 安装完成后，默认界面是黑黢黢的终端。我们试着安装 Mate 桌面。
+FreeBSD 13-release 安装完成后，默认界面是黑黢黢的终端。我们试着安装 MATE 桌面。
 
-第一步，改源。
+- 1 改源:
 
 先用root账号登录系统。FreeBSD 默认安装了 vi 和 ee 两个文本阅读器，选择一个适合的
 
@@ -39,17 +41,14 @@ pkg upgrade
 
 `pkg install sudo vim`
 
-vi打开sudo:
-
-`visudo`
+vi打开sudo: `visudo`
 
 在 root ALL=(ALL) ALL 下，添加一行 用户名 ALL=(ALL) ALL,比如你的用户名为 xiaowang, 这一行就是 xiaowang ALL=(ALL) ALL 保存后退出。
 
-开始安装 Mate 桌面：
+安装 MATE桌面和显示管理器（登录管理器）：
 
-`pkg install mate mate-desktop xorg`
+`pkg install xorg slim mate`
 
-这一步大概要安装近三百个软件，需要耗费大量时间，你可以去忙别的事情了。不过要检查一下是否有超时现象，到时候再执行一遍本命令，继续下载即可。
 
 安装成功后，继续配置
 
@@ -60,30 +59,21 @@ vi打开sudo:
 moused_enable="YES"
 dbus_enable="YES"
 hald_enable="YES"
+
+slim_enable="YES"
 ```
-安装显示管理器（登录管理器）：
 
-`pkg install slim`
-
-启用登录管理器:
-
-`vim /etc/rc.conf`， 添加一行 `slim_enable="YES"`
-
-默认用户自动登录：
+自动登录图形管理器：
 
 `vim /usr/local/etc/slim.conf` ，找到 auto_login,取消注释，这一行变为auto_login yes。同时找到 default_user , 这一行变为default_user 你的用户名 。保存后退出。
 
-退出系统，
+退出系统，`exit`
 
- `exit`
-
-使用普通账号登录系统。
+至此，设置接近完毕，最后一步，使用普通账号登录系统。
 
  `vim .xinitrc` (创建一个新文档)
 
 添加一行 `exec mate-session`
-
-至此，桌面系统安装完成。重启系统，即可看到 slim 界面，输入账号密码进入系统。
 
 
 ## 第二部分
@@ -92,7 +82,7 @@ hald_enable="YES"
 
 `sudo pkg install drm-fbsd13-kmod`
 
-drm-kmod 为从 linux 移植的 intel/amd 显卡驱动,安装完成后需要手动添加。打开 `/etc/rc.conf` ，如下:
+drm-xxx-kmod 为从 linux 移植的 intel/amd 显卡驱动,安装完成后需要手动添加。打开 `/etc/rc.conf` ，如下:
 
 - 如果为 intel 核心显卡，添加 kld_list="i915kms"。
 
@@ -106,9 +96,9 @@ drm-kmod 为从 linux 移植的 intel/amd 显卡驱动,安装完成后需要手�
 
 ### 一些软件
 
-- 中文字体： `pkg install noto-sc`
+- 中文字体： `noto-sc zh-sourcehanserif-sc-otf`
 
-- 网络管理器： `pkg install networkmgr`
+- 网络管理器： `networkmgr`
 
 - 软件包管理器：`octopkg`
 
@@ -157,11 +147,7 @@ network={
     psk="无线密码"
     }
 ```
-然后重启` netif`
-
-`sudo /etc/rc.d/netif restart`
-
-如何仍不起作用，终端输入：
+启用无线：
 
 `sudo ifconfig wlan0 up`
 
@@ -191,11 +177,13 @@ setenv MM_CHARSET en_US.UTF-8
 ```
 ### 自动挂载U盘
 
+注： calibre 安装后会提示挂载USB 的方法
+
 `pkg install automount`
 
 ### 对应软件：
 
-fusefs-ext4fuse : 只读
+fusefs-ntfs： NTFS 格式
 
 fusefs-ext2 : 支持读写 ext2, ext3, ext4
 
@@ -209,9 +197,10 @@ fusfefs-lkl : 将 linux 内核变为库文件，支持读写 BTFRS, XFS, EXT3, E
 
 - 登录信息： `vim /var/log/messages`
 
+
 ### 部分软件
 
-vscode linux-fdisk ddrescue redshift plank unrar you-get( pip版本较新) linux-sublime3 linuxqq
+vscode  ddrescue redshift plank unrar you-get( pip版本较新)
 
 
 
