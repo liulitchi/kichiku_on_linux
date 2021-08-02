@@ -154,20 +154,9 @@ network={
 ### 修改 sh
 
 chsh 用户名，然后编辑文件即可, 如 sh 一栏改为 /usr/csh。建议默认设置为 csh 。
-终端(csh)配置输入法
 
-在 .cshrc 和 /etc/csh.cshrc 中添加如下：
 
-```
-setenv XMODIFIERS @im=fcitx
-setenv GTK_IM_MODULE fcitx
-setenv GTK2_IM_MODULE fcitx
-setenv GTK3_IM_MODULE fcitx
-setenv QT_IM_MODULE fcitx
-setenv QT4_IM_MODULE fcitx
-```
-
-### 设置界面
+### 设置中文界面
 
 在 .cshrc 中添加两行：
 
