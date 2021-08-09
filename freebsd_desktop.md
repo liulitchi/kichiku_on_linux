@@ -116,7 +116,6 @@ setenv LANG zh_CN.UTF-8
 setenv MM_CHARSET zh_CN.UTF-8
 ```
 
-
 ### 中文输入法： 
 
 `pkg install zh-fcitx zh-fcitx-libpinyin zh-fcitx-configtool`
@@ -183,7 +182,6 @@ fusefs-ntfs： NTFS 格式
 
 fusefs-ext2 : 支持读写 ext2, ext3, ext4
 
-fusfefs-lkl : 将 linux 内核变为库文件，支持读写 BTFRS, XFS, EXT3, EXT4
 
 ## 第三部分
 
@@ -196,7 +194,7 @@ fusfefs-lkl : 将 linux 内核变为库文件，支持读写 BTFRS, XFS, EXT3, E
 
 ### 部分软件
 
-vscode  ddrescue redshift plank unrar you-get( pip版本较新)
+vscode  ddrescue plank unrar you-get
 
 
 
