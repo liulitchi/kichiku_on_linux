@@ -2,7 +2,7 @@
 
 ### 下载镜像
 
-进入[链接](https://mirrors.bfsu.edu.cn/OpenBSD/7.0/amd64/)。如果刻录U盘安装，下载 installXX.img；如果虚拟机或者 ventory 引导，下载 installXX.iso
+进入 [链接](https://mirrors.bfsu.edu.cn/OpenBSD/7.0/amd64/)。如果刻录U盘安装，下载 installXX.img；如果虚拟机或者 ventory 引导，下载 installXX.iso
 
 ### 自定义安装
 
