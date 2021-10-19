@@ -2,65 +2,75 @@
 
 ### 下载镜像
 
-进入[链接](https://mirrors.tuna.tsinghua.edu.cn/OpenBSD/6.8/amd64/)，下载 installXX.img ，然后刻录镜像。
+进入[链接](https://mirrors.bfsu.edu.cn/OpenBSD/7.0/amd64/)。如果刻录U盘安装，下载 installXX.img；如果虚拟机或者 ventory 引导，下载 installXX.iso
 
-待写
+### 自定义安装
+
+'''
+p m 查看分区大小
+
+a 增加分区
+
+q 确认分区
+'''
+
+
 
 ## 二 安装桌面
 
-系统安装完成后重启,OpenBSD 会自动检测无线、显卡和声卡并下载驱动，简直业界良心。虽然源地址在国外，但是速度并没有想象中缓慢，静等几分钟，待其自行更新。
+系统安装完成后重启,OpenBSD 会自动检测无线、显卡和声卡并下载驱动。静等几分钟，待其自行更新。
 
-### 1 获取权限
-
-> su
+### 1 进入root账户操作
 
 > pkg_add sudo 
  
 > visudo ，然后添加一行 `$USER ALL=(ALL) SETENV: ALL` （请将 $USER 替换为你的用户名)，保存后退出。
 
-### 2 获取 vim
+### 2 进入普通账户操作
+
+#### 2.1 获取 vim
 
 > sudo pkg_add vim #出现多个选项，如果想在未来使用 Gvim，可以选择 vim-gtk3
 
-### 3 更新
+#### 2.2 更新
 
-### 更新源地址
+#### 更新源地址
 
 > sudo vim /etc/installurl
 
-注释掉默认源，改为国内源 `https://mirrors.aliyun.com/openbsd`[^2]，保存后退出。
+注释掉默认源，改为国内源 `https://mirrors.bfsu.edu.cn/OpenBSD`[^1]，保存后退出。
 
-### 内核更新
+#### 内核更新
 
 > sudo syspatch
 
-### 驱动更新
+#### 驱动更新
 
 > sudo fw_update
 
-### 软件升级
+#### 软件升级
 
 > sudo pkg_add -u
 
-### 修改默认shell
+#### 修改默认shell
 
 > sudo chsh // sudo chsh -s /usr/local/bin/bash 用户名
 
 
  
-### 4 安装桌面和登录管理器
+### 3 安装桌面和登录管理器
  
-#### 4.1 安装 Mate 桌面
+#### 3.1 安装 Mate 桌面
  
 注意：为防止误操作，本节命令皆为在普通账号下操作。
  
-#### 所需安装软件
+##### 所需安装软件
  
-> sudo pkg_add slim  [^3]
+> sudo pkg_add slim  [^2]
  
 > sudo pkg_add mate mate-utils mate-extras # Mate桌面所需软件
  
-#### 配置文件 
+##### 配置文件 
  
 > cd ~。
 
@@ -80,17 +90,17 @@
 ```
 重启电脑即可进入桌面。
  
-#### 4.2 安装 Xfce 桌面
+#### 3.2 安装 Xfce 桌面
  
 注意：为防止误操作，本节命令皆为在普通账号下操作。
  
-#### 所需安装软件
+##### 所需安装软件
  
 > sudo pkg_add slim  # slim 为登录管理器
  
 > sudo pkg_add xfce  # Xfce 桌面所需软件
  
-#### 配置文件 
+##### 配置文件 
    
 > cd ~ 
  
@@ -109,18 +119,18 @@
 ```
 重启电脑即可进入桌面。
 
-#### 4.3 安装 Gnome 桌面
+#### 3.3 安装 Gnome 桌面
  
 注意：为防止误操作，本节命令皆为在普通账号下操作。
  
- #### 所需安装软件
+ ##### 所需安装软件
  
  > sudo pkg_add gdm  # gdm 为登录管理器
  
  > sudo pkg_add gnome-session gnome-terminal nautilus metacity gnome-panel # Gnome 桌面所需软件
  
 
- #### 配置文件 
+ ##### 配置文件 
  
  > cd ~
  
@@ -156,7 +166,7 @@
  
  ### 2 安装输入法
  
- > sudo pkg_add fcitx fcitx-configtool zh-libpinyin[^4]
+ > sudo pkg_add fcitx fcitx-configtool zh-libpinyin[^3]
  
  ### 3 设置中文
  
@@ -304,9 +314,9 @@ export GTK_IM_MODULE=XIM
  答：打开 /etc/rc.local ，添加  sysctl hw.smt=1 。
  ```
  
-[^2]: 此处选择了阿里云镜像源。可选择`清华镜像源`(https://mirrors.tuna.tsinghua.edu.cn/OpenBSD) 、    
- `北京外国语大学镜像源`(https://mirrors.bfsu.edu.cn/OpenBSD) 。
+[^1]: 此处选择了北外镜像源。也可选择`清华镜像源`(https://mirrors.tuna.tsinghua.edu.cn/OpenBSD) 、    
+ `阿里镜像源`(`https://mirrors.aliyun.com/openbsd`) 。
 
-[^3]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
+[^2]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
 
-[^4]: 虽然有 `fcitx-pinyin` 可选，但此处建议改为更易用的 `zh-libpinyin`
+[^3]: 虽然有 `fcitx-pinyin` 可选，但此处建议改为更易用的 `zh-libpinyin`
