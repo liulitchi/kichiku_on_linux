@@ -104,32 +104,23 @@ drm-xxx-kmod 为从 linux 移植的 intel/amd 显卡驱动,安装完成后需要
 
 ### 修改 sh
 
-chsh 用户名，然后编辑文件即可, 如 sh 一栏改为 /usr/csh。建议默认设置为 csh 。
+chsh 用户名，然后编辑文件即可, 如 sh 一栏改为 /usr/csh 。
 
 
 ### 中文界面
 
-在 .cshrc 中添加两行：
+在`/etc/login.conf`中设置：
 
 ```
-setenv LANG zh_CN.UTF-8
-setenv MM_CHARSET zh_CN.UTF-8
+:umask=022:\
+:charset=UTF-8:\
+:lang=no_NO.UTF-8:
 ```
 
 ### 中文输入法： 
 
 `pkg install zh-fcitx zh-fcitx-libpinyin zh-fcitx-configtool`
 
-在 .cshrc 中添加如下
-
-```
-setenv QT4_IM_MODULE fcitx
-setenv GTK_IM_MODULE fcitx
-setenv QT_IM_MODULE fcitx
-setenv GTK2_IM_MODULE fcitx
-setenv GTK3_IM_MODULE fcitx
-setenv XMODIFIERS @im=fcitx
-```
 输入法配置
 
 安装好 fcitx 后，使用 Configure来配置，可以保留汉语和英语两种输入法，如 pinyin(LibPinYin)和Keyboard - English(US)。默认 Ctrl + 空格切换。
@@ -178,9 +169,11 @@ network={
 
 ### 对应软件：
 
-fusefs-ntfs： NTFS 格式
+- fusefs-ntfs： NTFS 格式
 
-fusefs-ext2 : 支持读写 ext2, ext3, ext4
+- fusefs-ext2 : 支持读写 ext2, ext3, ext4
+
+- fusefs-simple-mtpfs / fusefs-mtpfs: 安卓类手机内存
 
 
 ## 第三部分
