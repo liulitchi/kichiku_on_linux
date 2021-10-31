@@ -171,13 +171,11 @@ network={
 
 ### 对应软件：
 
-- fusefs-ntfs： NTFS 格式
-
-- fusefs-ext2 : 支持读写 ext2, ext3, ext4
-
-- fusefs-simple-mtpfs / fusefs-jmtpfs : 安卓类手机内存
-
-- fusefs-s3fs： Kindle 阅读器
+- sysutils/fusefs-ntfs          // NTFS (read write support)
+- sysutils/fusefs-ext2          // EXT4
+- sysutils/fusefs-hfsfuse       // HFS
+- sysutils/fusefs-lkl           // XFS
+- sysutils/fusefs-simple-mtpfs  // MTP
 
 
 ## 第三部分
