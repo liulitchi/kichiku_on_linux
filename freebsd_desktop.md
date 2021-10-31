@@ -176,6 +176,7 @@ network={
 - sysutils/fusefs-hfsfuse       // HFS
 - sysutils/fusefs-lkl           // XFS
 - sysutils/fusefs-simple-mtpfs  // MTP
+- fusefs-s3fs  // amazon
 
 
 ## 第三部分
