@@ -117,6 +117,8 @@ chsh 用户名，然后编辑文件即可, 如 sh 一栏改为 /usr/csh 。
 :lang=no_NO.UTF-8:
 ```
 
+然后在终端运行`cap_mkdb /etc/login.conf`。
+
 ### 中文输入法： 
 
 `pkg install zh-fcitx zh-fcitx-libpinyin zh-fcitx-configtool`
