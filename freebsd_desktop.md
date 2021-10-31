@@ -175,7 +175,9 @@ network={
 
 - fusefs-ext2 : 支持读写 ext2, ext3, ext4
 
-- fusefs-simple-mtpfs / fusefs-mtpfs: 安卓类手机内存
+- fusefs-simple-mtpfs / fusefs-jmtpfs : 安卓类手机内存
+
+- fusefs-s3fs： Kindle 阅读器
 
 
 ## 第三部分
