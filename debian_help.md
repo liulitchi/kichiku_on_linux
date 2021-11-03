@@ -7,7 +7,7 @@
 
 添加 contrib 以及 non-free
 
-debian 10 的代码名 buster ，debian 11 的代码名 bullseye 。
+debian 11 代号为 bullseys ，debian 12 代号为 bookworm 。
 
 > 
 
@@ -63,16 +63,16 @@ autologin-user=你的用户名
 > sudo dpkg --remove-architecture i386
  
 
-## debian 无法启动 virtualbox
+## virtualbox 无法启动
 
-添加内河对应头文件(headers)
+添加内核对应头文件(headers)
 
 ## vim 配置
 
 > vim .vimrc
 
 ```
-set guifont=Monospace\ 20   " gvim 字体大小
+set guifont=Courier\ 20   " gvim 字体大小
 
 syntax on                   " 语法高亮
 
@@ -87,7 +87,7 @@ colorscheme desert          " 背景主题
 set nu                      " 显示行号
 ```
 
-## 添加路径（两种方式）
+## 添加路径（两种方式， .profle 或 .bashrc)
 
 > source $HOME/.local/env 
 
