@@ -7,7 +7,7 @@
 
 添加 contrib 以及 non-free
 
-debian 11 代号为 bullseys ，debian 12 代号为 bookworm 。
+debian 11 代号为 bullseye ，debian 12 代号为 bookworm 。
 
 > 
 
@@ -93,14 +93,10 @@ set nu                      " 显示行号
 
 or
 
-> vim .profile
-
-添加
-
 ```
  export PATH="$HOME/.local/bin:$PATH"
 ```
-
+建议在 .bashrc 里添加
 
 ## 更改 grub 背景图片
 
