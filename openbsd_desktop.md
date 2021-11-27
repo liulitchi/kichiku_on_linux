@@ -6,54 +6,55 @@
 
 ### 自定义安装
 
-'''
+```
 p m 查看分区大小
-
 a 增加分区
-
+d 删除分区
 q 确认分区
-'''
+```
+默认不要加载桌面，安装完毕后。
 
+`vi /etc/sysctl.conf`，设置：`machdep.allowaperture=2`
 
 
 ## 二 安装桌面
 
-系统安装完成后重启,OpenBSD 会自动检测无线、显卡和声卡并下载驱动。静等几分钟，待其自行更新。
+系统安装完成后重启，OpenBSD 会自动检测无线、显卡和声卡并下载驱动。静等几分钟，待其自行更新。
 
 ### 1 root账户更新源地址
 
-`vim /etc/installurl`
+`vi /etc/installurl`
 
 注释掉默认源，改为国内源 `https://mirrors.bfsu.edu.cn/OpenBSD`[^1]
 
 ### 2 root账户安装sudo
 
-> pkg_add sudo 
+`pkg_add sudo` 
  
-> visudo ，然后添加一行 `$USER ALL=(ALL) SETENV: ALL` （请将 $USER 替换为你的用户名)，保存后退出。
+`visudo` ，然后添加一行 `$USER ALL=(ALL) SETENV: ALL` （请将 $USER 替换为你的用户名)，保存后退出。
 
 ### 3 进入普通账户操作
 
 #### 3.1 获取 vim
 
-> sudo pkg_add vim #出现多个选项，如果想在未来使用 Gvim，可以选择 vim-gtk3
+`sudo pkg_add vim` #出现多个选项，如果想在未来使用 Gvim，可以选择 vim-gtk3
 
 
 #### 内核更新
 
-> sudo syspatch
+`sudo syspatch`
 
 #### 驱动更新
 
-> sudo fw_update
+`sudo fw_update`
 
 #### 软件升级
 
-> sudo pkg_add -u
+`sudo pkg_add -u`
 
 #### 修改默认shell
 
-> sudo chsh // sudo chsh -s /usr/local/bin/bash 用户名
+`sudo chsh // sudo chsh -s /usr/local/bin/bash 用户名`
 
 
  
@@ -65,20 +66,20 @@ q 确认分区
  
 ##### 所需安装软件
  
-> sudo pkg_add slim  [^2]
+`sudo pkg_add slim`  [^2]
  
-> sudo pkg_add mate mate-utils mate-extras # Mate桌面所需软件
+`sudo pkg_add mate mate-utils mate-extras` # Mate桌面所需软件
  
 ##### 配置文件 
  
-> cd ~。
+`cd ~`。
 
  
-> vim .xinitrc ，添加 `exec mate-session`
+`vim .xinitrc` ，添加 `exec mate-session`
  
-> sudo vim /etc/rc.local ， 添加 `/usr/local/bin/slim -d`。
+`sudo vim /etc/rc.local` ， 添加 `/usr/local/bin/slim -d`。
 
-> sudo vim /etc/rc.conf.local ，添加
+`sudo vim /etc/rc.conf.local` ，添加
  
 ```
  xdm_flags=NO
@@ -95,19 +96,19 @@ q 确认分区
  
 ##### 所需安装软件
  
-> sudo pkg_add slim  # slim 为登录管理器
+`sudo pkg_add slim`  # slim 为登录管理器
  
-> sudo pkg_add xfce  # Xfce 桌面所需软件
+`sudo pkg_add xfce`  # Xfce 桌面所需软件
  
 ##### 配置文件 
    
-> cd ~ 
+`cd ~` 
  
-> vim .xinitrc ，添加 `exec startxfce4`
+`vim .xinitrc` ，添加 `exec startxfce4`
  
-> sudo vim /etc/rc.local ， 添加 `/usr/bin/local/slim -d`
+`sudo vim /etc/rc.local` ， 添加 `/usr/bin/local/slim -d`
  
-> sudo vim /etc/rc.conf.local ，添加
+`sudo vim /etc/rc.conf.local` ，添加
  
 ```
  xdm_flags=NO
@@ -124,20 +125,20 @@ q 确认分区
  
  ##### 所需安装软件
  
- > sudo pkg_add gdm  # gdm 为登录管理器
+ `sudo pkg_add gdm`  # gdm 为登录管理器
  
- > sudo pkg_add gnome-session gnome-terminal nautilus metacity gnome-panel # Gnome 桌面所需软件
+ `sudo pkg_add gnome-session gnome-terminal nautilus metacity gnome-panel` # Gnome 桌面所需软件
  
 
- ##### 配置文件 
+##### 配置文件 
  
- > cd ~
+`cd ~`
  
- > vim .xinitrc ，添加 `exec gnome-session`
+`vim .xinitrc` ，添加 `exec gnome-session`
  
- > sudo vim /root/.xinitrc ，添加 `exec gmome-session`
+`sudo vim /root/.xinitrc` ，添加 `exec gmome-session`
  
- > sudo vim /etc/rc.conf.local ，修改内容为：
+ `sudo vim /etc/rc.conf.local` ，修改内容为：
  
  ```
  xdm_flags=NO #xdm 为 openbsd 默认启动器，屏蔽替换为 gdm
@@ -161,15 +162,15 @@ q 确认分区
  
  ### 1 安装字体
  
- > sudo pkg_add noto-cjk noto-emoji
+ `sudo pkg_add noto-cjk noto-emoji`
  
- ### 2 安装输入法
+### 2 安装输入法
  
- > sudo pkg_add fcitx fcitx-configtool zh-libpinyin[^3]
+`sudo pkg_add fcitx fcitx-configtool zh-libpinyin`[^3]
  
  ### 3 设置中文
  
- > vim ~/.profile ，添加以下：
+ `vim ~/.profile` ，添加以下：
  
  ```
 export LANG="zh_CN.UTF-8"
@@ -192,43 +193,44 @@ export GTK_IM_MODULE=XIM
  
  ### 1 提前准备
  
- > sudo pkg_add git bash wget
+ `sudo pkg_add git bash wget`
  
- ### 2 图标安装
- 
- > git clone https://github.com/vinceliuice/Qogir-icon-theme
- 
- > cd Qogir-icon-theme
- 
- > ./install.sh
- 
- ### 3 主题安装
+### 2 图标安装
 
- > git clone https://github.com/vinceliuice/Qogir-theme
+```
+git clone https://github.com/vinceliuice/Qogir-icon-theme
  
- > cd Qogir-theme
+cd Qogir-icon-theme
+ 
+./install.sh
+```
+### 3 主题安装
+```
+git clone https://github.com/vinceliuice/Qogir-theme
+ 
+cd Qogir-theme
 
- > ./install.sh
+./install.sh
+```
+## 六 挂载可移动磁盘
  
- ## 六 挂载可移动磁盘
+### 新建挂载点
  
- ### 新建挂载点
+ `cd ~`
  
- > cd ~
+ `mkdir media`
  
- > mkdir media
+ `cd media`
  
- > cd media
- 
- > mkdir first second third forth
+ `mkdir first second third forth`
  
  ### 查看盘符
  
- 使用`dmesg`命令来查看新插入的盘符，如格式为fat32的U盘，可能在openbsd系统里盘符为 sd1 。
+ 使用 `dmesg` 命令来查看新插入的盘符，如格式为 fat32 的 U盘，可能在 openbsd 系统里盘符为 sd1 。
  
  ### 检查分区
  
- 如插入的盘符为`sd1`，则输入 `sudo disklabel sd1` 查看分区情况。如下
+ 如插入的盘符为 `sd1`，则输入 `sudo disklabel sd1` 查看分区情况。如下
  
  ```
  #                size           offset  fstype [fsize bsize   cpg]
@@ -239,32 +241,33 @@ export GTK_IM_MODULE=XIM
  
  由上则可知分区为 i ，使用以下命令挂载：
  
- > sudo mount /dev/sd1i /$USER/media/first
+ `sudo mount /dev/sd1i /$USER/media/first`
  
  
  
- ### 其它格式
+### 其它格式
  
- OpenBSD 可挂载的外接硬盘格式有 `NTFS`、`ext2/ext3`以及`CD磁盘`等，具体命令可参考如下：
+OpenBSD 可挂载的外接硬盘格式有 `NTFS`、`ext2/ext3`以及`CD磁盘`等，具体命令可参考如下：
+
+```
+sudo mount /dev/sd3i /$USER/media/first   # fat32
  
- > sudo mount /dev/sd3i /$USER/media/first   # fat32
+sudo mount /dev/sd2k /$USER/media/second  # ntfs
  
- > sudo mount /dev/sd2k /$USER/media/second  # ntfs
+sudo mount /dev/sd1l /$USER/media/third  # ext2/ext3
  
- > sudo mount /dev/sd1l /$USER/media/third  # ext2/ext3
- 
- > sudo mount /dev/cd0a /$USER/media/forth  # CD
- 
+sudo mount /dev/cd0a /$USER/media/forth  # CD
+```
   
- ### 卸载磁盘
+### 卸载磁盘
  
- > sudo umount /$User/media/first
+`sudo umount /$User/media/first`
  
  ## 七 无线测试
 
 我的笔记本无线为 rtl8188cu ，驱动为 `rtwn0`，为了可以自动识别无线，可以作以下操作：
 
-> sudo vim /etc/hostname.rtwn0 ，而后添加 ：` dhcp` `nwid '无线名称' wpakey '无线密码'`，保存后即可。
+`sudo vim /etc/hostname.rtwn0` ，而后添加 ：` dhcp` `nwid '无线名称' wpakey '无线密码'`，保存后即可。
  
  ## 八 显卡驱动
  
@@ -272,21 +275,21 @@ export GTK_IM_MODULE=XIM
  
 ### 设置 Shell 中的变量 PS1
 
-    vim ~/.profile
+`vim ~/.profile`
 
-    PS1="[\u@\h \W]$"
+PS1="[\u@\h \W]$"
 
 ### 普通用户关机权限
 
-    visudo
+visudo
 
 取消最后一行shutdown的注释
 
- ### ffmpeg 录屏
+### ffmpeg 录屏
  
- > ffmpeg -f x11grab -s 1600x900 -i :0 -preset ultrafast -crf 10 screen.mp4 
+`ffmpeg -f x11grab -s 1600x900 -i :0 -preset ultrafast -crf 10 screen.mp4 `
  
-   crf在wiki中是质量，0最好，是无损，51是最差
+crf 在 wiki 中是质量，0 最好，是无损，51 是最差
  
  ### 参考书籍
  
@@ -297,8 +300,8 @@ export GTK_IM_MODULE=XIM
  ### 技巧问答
  
  ```
- 问：firefox观看优酷和B站时提示安装flash插件，如何解决？
- 答：安装chromium并浏览视频，注销后重新进入，firefox会显示正常。
+ 问：firefox 观看优酷和 B 站时提示安装 flash 插件，如何解决？
+ 答：安装 chromium 并浏览视频，注销后重新进入，firefox 会显示正常。
  问：是什么原理呢？
  答：我也不清楚。
  ```
@@ -308,13 +311,13 @@ export GTK_IM_MODULE=XIM
  ```
  ```
  问：为什么两核四线程的电脑，只有两个框框有波动？
- 答：为了安全，OpenBSD默认未加载多线程。
+ 答：为了安全，OpenBSD 默认未加载多线程。
  问：那要如何操作呢？
  答：打开 /etc/rc.local ，添加  sysctl hw.smt=1 。
  ```
  
-[^1]: 此处选择了北外镜像源。也可选择`清华镜像源`(https://mirrors.tuna.tsinghua.edu.cn/OpenBSD) 、    
- `阿里镜像源`(`https://mirrors.aliyun.com/openbsd`) 。
+[^1]: 此处选择了北外镜像源。也可选择[清华镜像源](https://mirrors.tuna.tsinghua.edu.cn/OpenBSD)、    
+ [阿里镜像源](https://mirrors.aliyun.com/openbsd) 。
 
 [^2]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
 
