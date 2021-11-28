@@ -293,7 +293,7 @@ crf 在 wiki 中是质量，0 最好，是无损，51 是最差
 
 ### 加载触摸板
 
-打开 `/etc/wsconsctl.conf`， 输入 `wsconsctl mouse.tp.tapping=1`
+打开 `/etc/wsconsctl.conf`， 输入 `mouse.tp.tapping=1`
 
 ### 加载线程
 
