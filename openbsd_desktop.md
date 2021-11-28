@@ -12,9 +12,7 @@ a 增加分区
 d 删除分区
 q 确认分区
 ```
-默认不要加载桌面，安装完毕后。
-
-`vi /etc/sysctl.conf`，设置：`machdep.allowaperture=2`
+默认不要加载桌面，安装完毕后，`vi /etc/sysctl.conf`，设置：`machdep.allowaperture=2`
 
 
 ## 二 安装桌面
