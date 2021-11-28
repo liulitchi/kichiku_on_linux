@@ -295,6 +295,10 @@ crf 在 wiki 中是质量，0 最好，是无损，51 是最差
 
 打开 `/etc/wsconsctl.conf`， 输入 `wsconsctl mouse.tp.tapping=1`
 
+### 加载线程
+
+打开 `/etc/sysctl.conf`，输入 `hw.smt=1` 。
+
  
 ### 参考书籍
  
@@ -310,19 +314,14 @@ crf 在 wiki 中是质量，0 最好，是无损，51 是最差
  问：是什么原理呢？
  答：我也不清楚。
  ```
- ```
+
+```
  问：如何解压 7z 或 rar 格式的压缩包
  答：安装 p7zip 和 unrar
  ```
- ```
- 问：为什么两核四线程的电脑，只有两个框框有波动？
- 答：为了安全，OpenBSD 默认未加载多线程。
- 问：那要如何操作呢？
- 答：打开 /etc/rc.local ，添加  sysctl hw.smt=1 。
- ```
+
  
-[^1]: 此处选择了北外镜像源。也可选择[清华镜像源](https://mirrors.tuna.tsinghua.edu.cn/OpenBSD)、    
- [阿里镜像源](https://mirrors.aliyun.com/openbsd) 。
+[^1]: 此处选择了北外镜像源。也可选择 [清华镜像源](https://mirrors.tuna.tsinghua.edu.cn/OpenBSD)、 [阿里镜像源](https://mirrors.aliyun.com/openbsd) 。
 
 [^2]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
 
