@@ -54,7 +54,7 @@ q 确认分区
 
 #### 修改默认shell
 
-`sudo chsh // sudo chsh -s /usr/local/bin/bash 用户名`
+`chsh // chsh -s /usr/local/bin/bash 用户名`
 
 
  
