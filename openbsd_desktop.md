@@ -134,8 +134,6 @@ q 确认分区
  
 `vim .xinitrc` ，添加 `exec gnome-session`
  
-`sudo vim /root/.xinitrc` ，添加 `exec gmome-session`
- 
  `sudo vim /etc/rc.conf.local` ，修改内容为：
  
  ```
