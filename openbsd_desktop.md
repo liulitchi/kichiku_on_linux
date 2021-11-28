@@ -290,8 +290,13 @@ visudo
 `ffmpeg -f x11grab -s 1600x900 -i :0 -preset ultrafast -crf 10 screen.mp4 `
  
 crf 在 wiki 中是质量，0 最好，是无损，51 是最差
+
+### 加载触摸板
+
+打开 `/etc/wsconsctl.conf`， 输入 `wsconsctl mouse.tp.tapping=1`
+
  
- ### 参考书籍
+### 参考书籍
  
  - Absolute OpenBSD
  
