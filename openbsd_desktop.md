@@ -317,7 +317,7 @@ crf 在 wiki 中是质量，0 最好，是无损，51 是最差
  ```
 
  
-[^1]: 此处选择了北外镜像源。也可选择 [清华镜像源](https://mirrors.tuna.tsinghua.edu.cn/OpenBSD)、 [阿里镜像源](https://mirrors.aliyun.com/openbsd) 。
+[^1]: 此处选择了北外镜像源。也可选择 [清华镜像源](https://mirrors.tuna.tsinghua.edu.cn/OpenBSD)、 [阿里镜像源](https://mirrors.aliyun.com/openbsd) 以及 [南京大学镜像源](https://mirror.sjtu.edu.cn/OpenBSD)。
 
 [^2]: 此处 Linux 和 FreeBSD 用户可用 lightdm 替代，而 OpenBSD 暂未收入该软件。
 
