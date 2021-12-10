@@ -14,7 +14,7 @@ FreeBSD 13-release 安装完成后，默认界面是黑黢黢的终端。我们�
 
 `mkdir -p /usr/local/etc/pkg/repos/ #新建文件夹`
 
-`vi /usr/local/etc/pkg/repos/FreeBSD.conf`， 这一步是新建配置文件 FreeBSD.conf
+`vi /usr/local/etc/pkg/repos/ustc.conf`， 这一步是新建源文本
 
 打开后，添加以下内容：
 ```
@@ -26,9 +26,22 @@ ustc:{
 　　enabled: yes
 }
 
-FreeBSD : {enabled: no}
+FreeBSD: { enabled: no }
 ```
 
+附：北京交通大学软件源
+
+```
+bjtu: {  
+    url: "pkg+http://mirror.bjtu.edu.cn/reverse/freebsd-pkg/${ABI}/quarterly",  
+    mirror_type: "srv",  
+    signature_type: "none",  
+    fingerprints: "/usr/share/keys/pkg",  
+    enabled: yes
+}
+
+FreeBSD: { enabled: no }
+```
 
 
 保存文本后，就可以开始更新源了
@@ -91,7 +104,7 @@ drm-xxx-kmod 为从 linux 移植的 intel/amd 显卡驱动,安装完成后需要
 
 ### 一些软件
 
-- 中文字体： `noto-sc zh-sourcehanserif-sc-otf`
+- 中文字体： `noto-sc noto-emoji`
 
 - 网络管理器： `networkmgr`
 
