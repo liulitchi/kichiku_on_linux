@@ -19,17 +19,16 @@ FreeBSD 13-release 安装完成后，默认界面是黑黢黢的终端。我们�
 打开后，添加以下内容：
 ```
 ustc:{
-　　url: "pkg+http://mirrors.ustc.edu.cn/freebsd-pkg/${ABI}/quarterly", 
+　　url: "pkg+http://mirrors.ustc.edu.cn/freebsd-pkg/${ABI}/latest", 
 　　mirror_type: "srv",
 　　signature_type: "none",
 　　fingerprints: "/usr/share/keys/pkg",
 　　enabled: yes
 }
+
+FreeBSD : {enabled: no}
 ```
 
-禁用系统级 pkg 源：
-
- > mv /etc/pkg/FreeBSD.conf /etc/pkg/FreeBSD.conf.back
 
 
 保存文本后，就可以开始更新源了
@@ -47,7 +46,7 @@ vi打开sudo: `visudo`
 
 安装 MATE桌面和显示管理器（登录管理器）：
 
-`pkg install xorg slim mate`
+`pkg install lightdm lightdm-gtk-greeter xorg mate`
 
 
 安装成功后，继续配置
@@ -58,14 +57,10 @@ vi打开sudo: `visudo`
 ```
 moused_enable="YES"
 dbus_enable="YES"
-hald_enable="YES"
-
-slim_enable="YES"
+lightdm_enable="YES"
 ```
 
-自动登录图形管理器：
-
-`vim /usr/local/etc/slim.conf` ，找到 auto_login,取消注释，这一行变为auto_login yes。同时找到 default_user , 这一行变为default_user 你的用户名 。保存后退出。
+附：登录管理器除`lightdm`外，可选`slim`替代。 `slim_enable="YES"`
 
 退出系统，`exit`
 
@@ -127,6 +122,20 @@ chsh 用户名，然后编辑文件即可, 如 sh 一栏改为 /usr/csh 。
 
 安装好 fcitx 后，使用 Configure来配置，可以保留汉语和英语两种输入法，如 pinyin(LibPinYin)和Keyboard - English(US)。默认 Ctrl + 空格切换。
 
+对于`csh/tcsh`， `vim .cshrc`:
+```
+setenv XMODIFIERS @im=fcitx
+setenv GTK_IM_MODULE fcitx
+setenv GTK3_IM_MODULE fcitx
+```
+
+对于`sh/bash`， `vim .profile`:
+```
+export XMODIFIERS='@im=fcitx'
+export GTK_IM_MODULE=fcitx
+export GTK3_IM_MODULE=fcitx
+```
+
 
 ### 无线模块
 
@@ -137,9 +146,7 @@ chsh 用户名，然后编辑文件即可, 如 sh 一栏改为 /usr/csh 。
 打开 `/boot/loader.conf `,添加以下内容：
 ```
 if_rtwn_load="YES"
-
 if_rtwn_pci_load="YES"
-
 legal.realtek.license_ack=1
 ```
 打开 `/etc/rc.conf`，添加以下内容
@@ -165,19 +172,18 @@ network={
 
 ### 自动挂载U盘
 
-注： calibre 安装后会提示挂载USB 的方法
+注： calibre 安装后会提示挂载 SB 的方法
 
-`pkg install automount`
-
-### 对应软件：
-
-- sysutils/fusefs-ntfs          // NTFS (read write support)
-- sysutils/fusefs-ext2          // EXT4
-- sysutils/fusefs-hfsfuse       // HFS
-- sysutils/fusefs-lkl           // XFS
-- sysutils/fusefs-simple-mtpfs  // MTP
-- fusefs-s3fs  // amazon
-
+```
+pkg install automount
+pw groupmod operator -m $USER
+```
+`vim /etc/devfs.rules`，添加以下两行：
+```
+[system=10]
+add path 'usb/*' mode 0660 group operator
+```
+`vim etc/rc.conf`，添加`devfs_system_ruleset="system"`
 
 ## 第三部分
 
@@ -186,11 +192,6 @@ network={
 - 显示硬件： `vim /var/run/dmesg.boot`
 
 - 登录信息： `vim /var/log/messages`
-
-
-### 部分软件
-
-vscode  ddrescue plank unrar you-get
 
 
 
