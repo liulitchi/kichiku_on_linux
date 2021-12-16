@@ -10,6 +10,7 @@
 p m 查看分区大小
 a 增加分区
 d 删除分区
+z 清空全部分区
 q 确认分区
 ```
 默认不要加载桌面，安装完毕后，`vi /etc/sysctl.conf`，设置：`machdep.allowaperture=2`
@@ -25,11 +26,9 @@ q 确认分区
 
 注释掉默认源，改为国内源 `https://mirrors.bfsu.edu.cn/OpenBSD`[^1]
 
-### 2 root账户安装sudo
+### 2 普通账号获取权限
 
-`pkg_add sudo` 
- 
-`visudo` ，然后添加一行 `$USER ALL=(ALL) SETENV: ALL` （请将 $USER 替换为你的用户名)，保存后退出。
+以 root 账号登录系统，而后新建 `/etc/doas.conf` 文本，打开 `doas.conf`，添加一行 `permit persist :wheel` 。
 
 ### 3 进入普通账户操作
 
@@ -64,15 +63,14 @@ q 确认分区
  
 ##### 所需安装软件
  
-`sudo pkg_add slim`  [^2]
+`doas pkg_add slim slim-theme`  [^2]
  
-`sudo pkg_add mate mate-utils mate-extras` # Mate桌面所需软件
+`doas pkg_add elementary-dock mate mate-utils mate-extras` # Mate桌面所需软件
  
 ##### 配置文件 
  
-`cd ~`。
+`cd ~`
 
- 
 `vim .xinitrc` ，添加 `exec mate-session`
  
 `sudo vim /etc/rc.local` ， 添加 `/usr/local/bin/slim -d`。
@@ -80,11 +78,9 @@ q 确认分区
 `sudo vim /etc/rc.conf.local` ，添加
  
 ```
- xdm_flags=NO
- sshd_flags=NO
- pkg_scripts="dbus_daemon avahi_daemon"
- dbus_enable=YES
- multicast_host=YES
+pkg_scripts="dbus_daemon messagebus"
+apmd_flags=-A
+multicast_host=YES
 ```
 重启电脑即可进入桌面。
  
@@ -94,9 +90,9 @@ q 确认分区
  
 ##### 所需安装软件
  
-`sudo pkg_add slim`  # slim 为登录管理器
+`doas pkg_add slim`  # slim 为登录管理器
  
-`sudo pkg_add xfce`  # Xfce 桌面所需软件
+`doas pkg_add xfce`  # Xfce 桌面所需软件
  
 ##### 配置文件 
    
@@ -104,20 +100,25 @@ q 确认分区
  
 `vim .xinitrc` ，添加 `exec startxfce4`
  
-`sudo vim /etc/rc.local` ， 添加 `/usr/bin/local/slim -d`
+`doas vim /etc/rc.local` ， 添加 `/usr/bin/local/slim -d`
  
-`sudo vim /etc/rc.conf.local` ，添加
+`doas vim /etc/rc.conf.local` ，添加
  
 ```
- xdm_flags=NO
- sshd_flags=NO
- pkg_scripts="dbus_daemon avahi_daemon"
- dbus_enable=YES
- multicast_host=YES
+pkg_scripts="dbus_daemon messagebus"
+apmd_flags=-A
+multicast_host=YES
 ```
 重启电脑即可进入桌面。
 
-#### 4.3 安装 Gnome 桌面
+#### 4.3 Slim 修改主题
+
+注：本节仅涉及 MATE/XFCE ，Gnome 有自己的显示管理器（GDM）。
+
+Slim 的主题文件位于 `/usr/local/share/slim/themes/` 文件夹内，大家可以自己选择喜欢的主题。
+这里我们以 **flower2** 主题为例，打开 `/etc/slim.conf`，找到含有 `current_theme` 的一行，将 **default** 改为 **flower2**，保存后即可。
+
+#### 4.4 安装 Gnome 桌面
  
 注意：为防止误操作，本节命令皆为在普通账号下操作。
  
