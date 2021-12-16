@@ -34,20 +34,20 @@ q 确认分区
 
 #### 3.1 获取 vim
 
-`sudo pkg_add vim` #出现多个选项，如果想在未来使用 Gvim，可以选择 vim-gtk3
+`doas pkg_add vim` #出现多个选项，如果想在未来使用 Gvim，可以选择 vim-gtk3
 
 
 #### 内核更新
 
-`sudo syspatch`
+`doas syspatch`
 
 #### 驱动更新
 
-`sudo fw_update`
+`doas fw_update`
 
 #### 软件升级
 
-`sudo pkg_add -u`
+`doas pkg_add -u`
 
 #### 修改默认shell
 
@@ -73,9 +73,9 @@ q 确认分区
 
 `vim .xinitrc` ，添加 `exec mate-session`
  
-`sudo vim /etc/rc.local` ， 添加 `/usr/local/bin/slim -d`。
+`doas vim /etc/rc.local` ， 添加 `/usr/local/bin/slim -d`。
 
-`sudo vim /etc/rc.conf.local` ，添加
+`doas vim /etc/rc.conf.local` ，添加
  
 ```
 pkg_scripts="dbus_daemon messagebus"
@@ -124,9 +124,9 @@ Slim 的主题文件位于 `/usr/local/share/slim/themes/` 文件夹内，大家
  
  ##### 所需安装软件
  
- `sudo pkg_add gdm`  # gdm 为登录管理器
+ `doas pkg_add gdm`  # gdm 为登录管理器
  
- `sudo pkg_add gnome-session gnome-terminal nautilus metacity gnome-panel` # Gnome 桌面所需软件
+ `doas pkg_add gnome-session gnome-terminal nautilus metacity gnome-panel` # Gnome 桌面所需软件
  
 
 ##### 配置文件 
@@ -135,13 +135,12 @@ Slim 的主题文件位于 `/usr/local/share/slim/themes/` 文件夹内，大家
  
 `vim .xinitrc` ，添加 `exec gnome-session`
  
- `sudo vim /etc/rc.conf.local` ，修改内容为：
+ `doas vim /etc/rc.conf.local` ，修改内容为：
  
  ```
  xdm_flags=NO #xdm 为 openbsd 默认启动器，屏蔽替换为 gdm
  gnome_enable=YES
- gdm_enable=YES
- pkg_scripts="messagebus dbus_daemon avahi_daemon gdm"
+ pkg_scripts="messagebus dbus_daemon gdm"
  sshd_flags=NO       #ssh设置，需要时可开启
  multicast_host=YES
 ```
@@ -159,11 +158,11 @@ Slim 的主题文件位于 `/usr/local/share/slim/themes/` 文件夹内，大家
  
  ### 1 安装字体
  
- `sudo pkg_add noto-cjk noto-emoji`
+ `doas pkg_add noto-cjk noto-emoji`
  
 ### 2 安装输入法
  
-`sudo pkg_add fcitx fcitx-configtool zh-libpinyin`[^3]
+`doas pkg_add fcitx fcitx-configtool zh-libpinyin`[^3]
  
  ### 3 设置中文
  
@@ -190,7 +189,7 @@ export GTK_IM_MODULE=XIM
  
  ### 1 提前准备
  
- `sudo pkg_add git bash wget`
+ `doas pkg_add git bash wget`
  
 ### 2 图标安装
 
@@ -238,7 +237,7 @@ cd Qogir-theme
  
  由上则可知分区为 i ，使用以下命令挂载：
  
- `sudo mount /dev/sd1i /$USER/media/first`
+ `doas mount /dev/sd1i /$USER/media/first`
  
  
  
@@ -247,28 +246,31 @@ cd Qogir-theme
 OpenBSD 可挂载的外接硬盘格式有 `NTFS`、`ext2/ext3`以及`CD磁盘`等，具体命令可参考如下：
 
 ```
-sudo mount /dev/sd3i /$USER/media/first   # fat32
+doas mount /dev/sd3i /$USER/media/first   # fat32
  
-sudo mount /dev/sd2k /$USER/media/second  # ntfs
+doas mount /dev/sd2k /$USER/media/second  # ntfs
  
-sudo mount /dev/sd1l /$USER/media/third  # ext2/ext3
+doas mount /dev/sd1l /$USER/media/third  # ext2/ext3
  
-sudo mount /dev/cd0a /$USER/media/forth  # CD
+doas mount /dev/cd0a /$USER/media/forth  # CD
 ```
   
 ### 卸载磁盘
  
-`sudo umount /$User/media/first`
+`doas umount /$User/media/first`
  
  ## 七 无线测试
 
-我的笔记本无线为 rtl8188cu ，驱动为 `rtwn0`，为了可以自动识别无线，可以作以下操作：
+**OpenBSD** 里的无线网络，配置文件通常是 `hostname.if` ，其中 **if** 为无线驱动名称+序号。如一台笔记本无线型号为 **rtl8188cu** ，**OpenBSD** 下驱动为 **rtwn** ，序号从 0 开始。为了让系统自动加载无线，可打开 `/etc/hostname.rtwn0` 文件 ，而后添加：
+```
+dhcp 
+nwid '无线名称' wpakey '无线密码'
+```
+保存后即可。
 
-`sudo vim /etc/hostname.rtwn0` ，而后添加 ：` dhcp` `nwid '无线名称' wpakey '无线密码'`，保存后即可。
+## 八 驱动
  
- ## 八 显卡驱动
- 
- ## 九 补遗
+## 九 补遗
  
 ### 设置 Shell 中的变量 PS1
 
