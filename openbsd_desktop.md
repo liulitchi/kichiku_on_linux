@@ -138,10 +138,8 @@ Slim 的主题文件位于 `/usr/local/share/slim/themes/` 文件夹内，大家
  `doas vim /etc/rc.conf.local` ，修改内容为：
  
  ```
- xdm_flags=NO #xdm 为 openbsd 默认启动器，屏蔽替换为 gdm
  gnome_enable=YES
  pkg_scripts="messagebus dbus_daemon gdm"
- sshd_flags=NO       #ssh设置，需要时可开启
  multicast_host=YES
 ```
  重启电脑即可进入桌面。
