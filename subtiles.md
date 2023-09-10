@@ -12,4 +12,4 @@
 
 ## 批量下载b站视频
 
-> for i in {1..5}; do /home/litchi/Apps/you-get/you-get https://www.bilibili.com/video/BV1o5411d77L?p=$i -c /home/litchi/Apps/cookies.txt; done 
+> for i in {1..5}; do you-get https://www.bilibili.com/video/BVxxxxxxxxxxx?p=$i -c cookies.txt; done 
