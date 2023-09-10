@@ -6,7 +6,7 @@
 
 > for video in *.mp4; do ffmpeg -i "$video" -vn -acodec libvorbis "${video%.mp4}.ogg"; done
 
-## ffmpeg 提取并复制音频
+## ffmpeg 提取并复制音频（格式常为 aac 或 m4a，可通过 VLC  查看“编解码器”信息）
 
 > for video in *.mp4; do ffmpeg -i "$video" -vn -c:a copy "${video%.mp4}.aac"; done
 
